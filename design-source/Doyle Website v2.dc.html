@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/broadsheet-0983615f-5b3f-4205-a76b-ec6aa8a0079d/styles.css">
+<script src="_ds/broadsheet-0983615f-5b3f-4205-a76b-ec6aa8a0079d/_ds_bundle.js"></script>
+<script src="./image-slot.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&amp;display=swap">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+<title>Doyle Roofing &amp; Remodeling</title>
+<style>
+body{margin:0;background:#F7F7F5;color:#4A5560;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+a{color:#34414D}
+a:hover{color:#A95F2D}
+:focus-visible{outline:2px solid #C87943;outline-offset:3px}
+@keyframes dr-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes dr-spin{to{transform:rotate(360deg)}}
+@keyframes dr-scrollcue{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+@keyframes dr-spinfast{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</helmet>
+<div style="--color-bg:#F7F7F5;--color-surface:#FFFFFF;--color-text:#222D37;--color-accent:#A95F2D;--color-accent-600:#8F4F25;--color-accent-700:#76411E;--color-accent-100:#F5E9DF;--color-accent-800:#6A3A1B;--color-divider:rgba(52,65,77,.28);--font-heading:'Manrope',sans-serif;--font-body:'Source Serif 4',Georgia,serif;font-family:'Source Serif 4',Georgia,serif;background:#F7F7F5;color:#4A5560;min-height:100vh;display:flex;flex-direction:column;overflow-x:clip">
+
+<div ref="{{ progressRef }}" aria-hidden="true" style="position:fixed;top:0;left:0;right:0;height:3px;background:#C87943;transform-origin:left;transform:scaleX(0);z-index:70"></div>
+<button onClick="{{ skipToMain }}" style="position:fixed;left:12px;top:-80px;z-index:100;padding:12px 18px;background:#222D37;color:#FFFFFF;border:0;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;cursor:pointer" style-focus="top:12px">Skip to content</button>
+
+<header style="position:fixed;top:14px;left:0;right:0;z-index:55;padding:0 clamp(12px,2.4vw,32px);pointer-events:none">
+  <div style="pointer-events:auto;max-width:1280px;margin:0 auto;height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 8px 0 20px;border-radius:999px;background:{{ headerBg }};backdrop-filter:blur(14px) saturate(1.3);border:1px solid {{ headerBorder }};box-shadow:{{ headerShadow }};transition:background .3s ease,box-shadow .3s ease,border-color .3s ease">
+    <a href="#/" aria-label="Doyle Roofing and Remodeling, home" style="display:flex;align-items:center;gap:10px;text-decoration:none;color:{{ headerInk }};transition:color .3s">
+      <svg width="30" height="20" viewBox="0 0 34 22" aria-hidden="true"><path d="M2 20 L17 4 L32 20" fill="none" stroke="#C87943" stroke-width="3.5"></path></svg>
+      <span style="display:flex;flex-direction:column;line-height:1"><span style="font-family:Manrope,sans-serif;font-weight:800;font-size:19px;letter-spacing:.08em">DOYLE</span><span style="font-family:Manrope,sans-serif;font-weight:700;font-size:9px;letter-spacing:.22em;text-transform:uppercase;opacity:.75;margin-top:4px">Roofing &amp; Remodeling</span></span>
+    </a>
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Primary">
+        <ul style="display:flex;gap:2px;list-style:none;margin:0;padding:4px;border-radius:999px;background:{{ navTrack }}">
+          <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+            <li><a href="{{ n.href }}" aria-current="{{ n.current }}" style="display:block;padding:9px 16px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;text-decoration:none;color:{{ n.color }};background:{{ n.bg }};transition:background .25s,color .25s" style-hover="color:#C87943">{{ n.label }}</a></li>
+          </sc-for>
+        </ul>
+      </nav>
+    </sc-if>
+    <div style="display:flex;align-items:center;gap:8px">
+      <sc-if value="{{ showHeaderCta }}" hint-placeholder-val="{{ true }}">
+        <a class="btn btn-primary" href="#/estimate" style="min-height:48px;padding:0 8px 0 20px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:#FFFFFF;gap:10px;transition:gap .25s,background .2s" style-hover="gap:14px">Get an Estimate<span style="width:32px;height:32px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      </sc-if>
+      <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+        <button ref="{{ menuBtnRef }}" onClick="{{ openMenu }}" aria-expanded="{{ menuExpanded }}" aria-controls="mobile-menu" aria-label="Open menu" style="width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ menuBtnBg }};border:0;color:{{ headerInk }};cursor:pointer;font-size:22px"><i class="ph-duotone ph-list" aria-hidden="true"></i></button>
+      </sc-if>
+    </div>
+  </div>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <div id="mobile-menu" ref="{{ menuRef }}" role="dialog" aria-modal="true" aria-label="Site menu" onKeyDown="{{ menuKey }}" style="position:fixed;inset:0;z-index:90;background:#222D37;color:#FFFFFF;display:flex;flex-direction:column;overflow-y:auto;padding:14px clamp(12px,2.4vw,32px) 32px">
+    <div style="height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 8px 0 20px">
+      <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:19px;letter-spacing:.08em">DOYLE</span>
+      <button ref="{{ menuCloseRef }}" onClick="{{ closeMenuBtn }}" aria-label="Close menu" style="width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.1);border:0;color:#FFFFFF;cursor:pointer;font-size:22px" style-hover="background:rgba(255,255,255,.18)"><i class="ph-duotone ph-x" aria-hidden="true"></i></button>
+    </div>
+    <nav aria-label="Mobile" style="padding:32px 12px 0;flex:1">
+      <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+        <sc-for list="{{ nav }}" as="n" hint-placeholder-count="5">
+          <li data-menu-item="1" style="border-bottom:1px solid rgba(255,255,255,.1)"><a href="{{ n.href }}" aria-current="{{ n.current }}" style="display:flex;align-items:baseline;gap:16px;padding:18px 0;text-decoration:none;color:#FFFFFF"><span style="font-family:Manrope,sans-serif;font-weight:700;font-size:13px;color:#C87943">{{ n.num }}</span><span style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,8vw,44px);letter-spacing:-.03em;line-height:1">{{ n.label }}</span></a></li>
+        </sc-for>
+      </ul>
+    </nav>
+    <div style="padding:32px 12px 0;display:flex;flex-direction:column;gap:20px">
+      <a class="btn btn-primary" href="#/estimate" style="min-height:58px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF">Get an Estimate</a>
+      <div style="display:flex;flex-direction:column;gap:8px;font-size:17px;color:#D5DBE0">
+        <a href="tel:+14107766528" style="color:#FFFFFF">+1 (410) 776-6528</a>
+        <a href="mailto:paxton.doyle@yahoo.com" style="color:#FFFFFF">paxton.doyle@yahoo.com</a>
+        <span>1100 Congress St, Houston, TX 77002</span>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+<main id="main" ref="{{ mainRef }}" tabindex="-1" style="outline:none;flex:1">
+
+<!-- ================= HOME ================= -->
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <div data-screen-label="Home">
+    <section aria-labelledby="home-h1" style="position:relative;min-height:max(680px,100svh);background:#222D37;color:#FFFFFF;display:flex;align-items:flex-end;overflow:hidden">
+      <div style="position:absolute;inset:0;opacity:{{ heroRoofOp }};transition:opacity .7s ease;pointer-events:{{ heroRoofPe }}"><image-slot id="home-hero-roof" shape="rect" placeholder="Illustrative placeholder — residential exterior / roofline photograph"></image-slot></div>
+      <div style="position:absolute;inset:0;opacity:{{ heroRemOp }};transition:opacity .7s ease;pointer-events:{{ heroRemPe }}"><image-slot id="home-hero-remodel" shape="rect" placeholder="Illustrative placeholder — renovated interior photograph"></image-slot></div>
+      <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(34,45,55,.55) 0%,rgba(34,45,55,.25) 35%,rgba(34,45,55,.9) 100%)"></div>
+      <svg aria-hidden="true" viewBox="0 0 1200 400" preserveAspectRatio="none" style="position:absolute;left:0;right:0;top:18%;width:100%;height:40%;pointer-events:none;opacity:.35"><path d="M0 380 L360 120 L720 380" fill="none" stroke="#C87943" stroke-width="1"></path><path d="M480 380 L840 60 L1200 380" fill="none" stroke="#F5E9DF" stroke-width="1"></path></svg>
+
+      <div style="position:relative;width:100%;max-width:1320px;margin:0 auto;padding:140px clamp(20px,4vw,56px) clamp(32px,5vw,64px);display:grid;grid-template-columns:{{ L.heroGrid }};gap:clamp(28px,4vw,56px);align-items:end;pointer-events:none">
+        <div style="display:flex;flex-direction:column;gap:clamp(20px,2.4vw,32px)">
+          <span data-rise="1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:rgba(34,45,55,.6);border:1px solid rgba(255,255,255,.2);font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F5E9DF"><span style="width:6px;height:6px;border-radius:50%;background:#C87943"></span>Roofing &amp; Remodeling · Houston, TX</span>
+          <h1 id="home-h1" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(46px,8.4vw,128px);line-height:.95;letter-spacing:-.045em;margin:0;color:#FFFFFF">
+            <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block">Built to Protect.</span></span>
+            <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block;color:#E9B48C">Designed to Improve.</span></span>
+          </h1>
+          <p data-rise="1" style="font-size:clamp(18px,1.5vw,21px);line-height:1.55;color:#E7EAED;margin:0;max-width:46ch;text-wrap:pretty">Explore roofing and remodeling services designed to help you plan your next home improvement project with confidence.</p>
+          <div data-rise="1" style="display:flex;flex-wrap:wrap;gap:12px;pointer-events:auto">
+            <a class="btn btn-primary" href="#/estimate" style="min-height:58px;padding:0 10px 0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s,background .2s" style-hover="gap:20px">Get an Estimate<span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center;font-size:18px"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+            <a class="btn" href="#/projects" style="min-height:58px;padding:0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;border:1px solid rgba(255,255,255,.45);background:rgba(34,45,55,.35)" style-hover="background:rgba(255,255,255,.12)">Explore Our Projects</a>
+          </div>
+        </div>
+        <div data-rise="1" style="pointer-events:auto;justify-self:end;width:100%;max-width:400px;background:#222D37;border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:16px;box-shadow:0 20px 60px rgba(0,0,0,.35)">
+          <span id="hero-mode-label" style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#B9C2CA">I’m planning</span>
+          <div role="radiogroup" aria-labelledby="hero-mode-label" style="position:relative;display:grid;grid-template-columns:1fr 1fr;padding:4px;border-radius:999px;background:rgba(255,255,255,.08)">
+            <span aria-hidden="true" style="position:absolute;top:4px;bottom:4px;left:4px;width:calc(50% - 4px);border-radius:999px;background:#A95F2D;transform:{{ heroThumb }};transition:transform .45s cubic-bezier(.6,.0,.2,1)"></span>
+            <sc-for list="{{ heroOpts }}" as="o" hint-placeholder-count="2">
+              <button role="radio" aria-checked="{{ o.checked }}" onClick="{{ o.select }}" onKeyDown="{{ heroKey }}" tabIndex="{{ o.tab }}" style="position:relative;min-height:44px;border:0;background:transparent;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF;cursor:pointer">{{ o.label }}</button>
+            </sc-for>
+          </div>
+          <p aria-live="polite" style="margin:0;font-size:16px;line-height:1.55;color:#E7EAED;min-height:3.1em">{{ heroLine }}</p>
+          <a href="{{ heroHref }}" style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:14px;border-top:1px solid rgba(255,255,255,.14);font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF;text-decoration:none" style-hover="color:#E9B48C">{{ heroCta }}<i class="ph-duotone ph-arrow-right" aria-hidden="true" style="font-size:18px"></i></a>
+        </div>
+      </div>
+      <div aria-hidden="true" style="position:absolute;left:50%;bottom:18px;width:1px;height:44px;background:rgba(255,255,255,.18);overflow:hidden;pointer-events:none"><span style="display:block;width:1px;height:100%;background:#FFFFFF;animation:dr-scrollcue 2.4s ease-in-out infinite"></span></div>
+    </section>
+
+    <div aria-hidden="true" style="background:#F5E9DF;overflow:hidden;padding:clamp(18px,2.4vw,28px) 0;border-bottom:1px solid rgba(34,45,55,.08)">
+      <div style="display:flex;width:max-content;animation:dr-marquee 38s linear infinite">
+        <sc-for list="{{ marquee }}" as="m" hint-placeholder-count="8">
+          <span style="display:flex;align-items:center;gap:clamp(20px,3vw,44px);padding-right:clamp(20px,3vw,44px);font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,5.6vw,84px);letter-spacing:-.035em;line-height:1;white-space:nowrap;color:{{ m.fill }};-webkit-text-stroke:{{ m.stroke }}">{{ m.t }}<svg width="44" height="28" viewBox="0 0 34 22"><path d="M2 20 L17 4 L32 20" fill="none" stroke="#C87943" stroke-width="3.5"></path></svg></span>
+        </sc-for>
+      </div>
+    </div>
+
+    <section aria-labelledby="svc-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0">
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(28px,3.6vw,48px)">
+        <h2 id="svc-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0;max-width:14ch">Two crafts. One clear process.</h2>
+        <p style="font-size:18px;line-height:1.6;color:#4A5560;margin:0;max-width:38ch">Pick the side of the house you are thinking about — the roof above it or the rooms inside it.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ L.feat }};gap:clamp(12px,1.6vw,20px)">
+        <a href="#/roofing" data-reveal="1" onMouseEnter="{{ hv.roofIn }}" onMouseLeave="{{ hv.out }}" onFocus="{{ hv.roofIn }}" onBlur="{{ hv.out }}" style="position:relative;display:block;height:{{ L.tileH }};border-radius:20px;overflow:hidden;background:#2E3A45;color:#FFFFFF;text-decoration:none">
+          <div style="position:absolute;inset:0;transform:{{ hv.roof }};transition:transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none"><image-slot id="roof-hero" shape="rect" placeholder="Illustrative placeholder — roofing photograph"></image-slot></div>
+          <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,45,55,.1) 30%,rgba(34,45,55,.92) 100%)"></div>
+          <span aria-hidden="true" style="position:absolute;top:20px;right:20px;width:56px;height:56px;border-radius:50%;background:#FFFFFF;color:#222D37;display:flex;align-items:center;justify-content:center;font-size:22px;transform:{{ hv.roofArrow }};transition:transform .4s ease"><i class="ph-duotone ph-arrow-up-right"></i></span>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#F5E9DF">01 — Roofing</span>
+            <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(32px,4vw,58px);line-height:1;letter-spacing:-.035em">Protection starts at the top.</span>
+            <span style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ roofNames }}" as="s" hint-placeholder-count="4"><span style="padding:7px 13px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-family:Manrope,sans-serif;font-weight:600;font-size:13px">{{ s }}</span></sc-for>
+            </span>
+          </div>
+        </a>
+        <a href="#/remodeling" data-reveal="1" onMouseEnter="{{ hv.remIn }}" onMouseLeave="{{ hv.out }}" onFocus="{{ hv.remIn }}" onBlur="{{ hv.out }}" style="position:relative;display:block;height:{{ L.tileH }};border-radius:20px;overflow:hidden;background:#EADBCD;color:#222D37;text-decoration:none">
+          <div style="position:absolute;inset:0;transform:{{ hv.rem }};transition:transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none"><image-slot id="rem-hero" shape="rect" placeholder="Illustrative placeholder — remodeling photograph"></image-slot></div>
+          <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(245,233,223,0) 30%,rgba(245,233,223,.96) 78%)"></div>
+          <span aria-hidden="true" style="position:absolute;top:20px;right:20px;width:56px;height:56px;border-radius:50%;background:#222D37;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;transform:{{ hv.remArrow }};transition:transform .4s ease"><i class="ph-duotone ph-arrow-up-right"></i></span>
+          <div style="position:absolute;left:0;right:0;bottom:0;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:14px">
+            <span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#6A3A1B">02 — Remodeling</span>
+            <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.4vw,50px);line-height:1;letter-spacing:-.035em">Spaces reworked around how you live.</span>
+            <span style="display:flex;flex-wrap:wrap;gap:8px">
+              <sc-for list="{{ remNames }}" as="s" hint-placeholder-count="4"><span style="padding:7px 13px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(34,45,55,.14);font-family:Manrope,sans-serif;font-weight:600;font-size:13px">{{ s }}</span></sc-for>
+            </span>
+          </div>
+        </a>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:clamp(12px,1.6vw,20px);margin-top:clamp(12px,1.6vw,20px)">
+        <a href="#/estimate" data-reveal="1" style="border-radius:20px;background:#A95F2D;color:#FFFFFF;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;text-decoration:none;transition:background .2s" style-hover="background:#8F4F25">
+          <i class="ph-duotone ph-chats-circle" aria-hidden="true" style="font-size:34px"></i>
+          <span style="display:flex;flex-direction:column;gap:8px"><span style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1.1">Not sure which one you need?</span><span style="font-size:16px;line-height:1.5;color:#FBEFE6">Describe it in your own words — we will sort out the category.</span></span>
+        </a>
+        <a href="#/projects" data-reveal="1" style="border-radius:20px;background:#FFFFFF;color:#222D37;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;text-decoration:none;border:1px solid rgba(52,65,77,.12);transition:border-color .2s" style-hover="border-color:#A95F2D">
+          <i class="ph-duotone ph-images-square" aria-hidden="true" style="font-size:34px;color:#A95F2D"></i>
+          <span style="display:flex;flex-direction:column;gap:8px"><span style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;line-height:1.1">See the project gallery</span><span style="font-size:16px;line-height:1.5;color:#4A5560">Roofing and remodeling work, filterable by category.</span></span>
+        </a>
+        <div data-reveal="1" style="border-radius:20px;background:#222D37;color:#FFFFFF;padding:28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:20px">
+          <i class="ph-duotone ph-phone-call" aria-hidden="true" style="font-size:34px;color:#E9B48C"></i>
+          <span style="display:flex;flex-direction:column;gap:6px"><a href="tel:+14107766528" style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;color:#FFFFFF;text-decoration:none" style-hover="color:#E9B48C">+1 (410) 776-6528</a><a href="mailto:paxton.doyle@yahoo.com" style="font-size:16px;color:#D5DBE0;word-break:break-word" style-hover="color:#FFFFFF">paxton.doyle@yahoo.com</a></span>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="rail-h" style="margin-top:clamp(72px,9vw,128px);background:#222D37;color:#FFFFFF;padding:clamp(64px,8vw,112px) 0">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:clamp(28px,3.6vw,48px)">
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F5E9DF"><span style="width:6px;height:6px;border-radius:50%;background:#C87943"></span>Featured projects</span>
+          <h2 id="rail-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.04em;margin:0">Work, shown plainly.</h2>
+          <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span style="font-size:15px;color:#B9C2CA">Sample entries — to be replaced with approved client projects.</span></sc-if>
+        </div>
+        <div style="display:flex;gap:10px;align-items:center">
+          <button onClick="{{ railPrev }}" aria-label="Scroll projects left" style="width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#FFFFFF;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.1)"><i class="ph-duotone ph-arrow-left" aria-hidden="true"></i></button>
+          <button onClick="{{ railNext }}" aria-label="Scroll projects right" style="width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#FFFFFF;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:rgba(255,255,255,.1)"><i class="ph-duotone ph-arrow-right" aria-hidden="true"></i></button>
+          <a href="#/projects" style="margin-left:8px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF;text-decoration:none;border-bottom:2px solid #C87943;padding:6px 0" style-hover="color:#E9B48C">View all</a>
+        </div>
+      </div>
+      <sc-if value="{{ hasFeatured }}" hint-placeholder-val="{{ true }}">
+        <div style="position:relative">
+          <div ref="{{ railRef }}" onPointerDown="{{ railDown }}" onPointerMove="{{ railMove }}" onPointerUp="{{ railUp }}" onPointerLeave="{{ railLeave }}" onPointerEnter="{{ railEnter }}" style="display:flex;gap:clamp(12px,1.6vw,20px);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 clamp(20px,4vw,56px) 8px;scroll-padding:0 clamp(20px,4vw,56px);cursor:grab;user-select:none">
+            <sc-for list="{{ railItems }}" as="p" hint-placeholder-count="4">
+              <article style="position:relative;flex:none;width:clamp(270px,32vw,440px);aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:#2E3A45;scroll-snap-align:start">
+                <div style="position:absolute;inset:0;pointer-events:none"><image-slot id="{{ p.slot }}" shape="rect" placeholder="Illustrative placeholder — approved project photograph"></image-slot></div>
+                <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,45,55,0) 45%,rgba(34,45,55,.92) 100%);pointer-events:none"></div>
+                <div style="position:absolute;left:0;right:0;bottom:0;padding:24px;display:flex;flex-direction:column;gap:10px;pointer-events:none">
+                  <span style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:5px 11px;border-radius:999px;background:#F5E9DF;color:#6A3A1B;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">{{ p.cat }}</span><span style="padding:5px 11px;border-radius:999px;border:1px dashed rgba(255,255,255,.55);color:#FFFFFF;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">Sample entry</span></span>
+                  <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:26px;letter-spacing:-.02em;margin:0;color:#FFFFFF">{{ p.title }}</h3>
+                </div>
+                <button onClick="{{ p.open }}" aria-label="{{ p.openLabel }}" style="position:absolute;inset:0;background:transparent;border:0;cursor:inherit;border-radius:20px"></button>
+              </article>
+            </sc-for>
+          </div>
+          <div ref="{{ chipRef }}" aria-hidden="true" style="position:fixed;left:0;top:0;width:88px;height:88px;margin:-44px 0 0 -44px;border-radius:50%;background:#C87943;color:#222D37;display:flex;align-items:center;justify-content:center;font-family:Manrope,sans-serif;font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;pointer-events:none;opacity:0;transform:scale(.4);transition:opacity .2s,transform .2s;z-index:40">View</div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noFeatured }}" hint-placeholder-val="{{ false }}">
+        <p style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);font-size:19px;color:#D5DBE0">Project stories will appear here once approved work is published.</p>
+      </sc-if>
+    </section>
+
+    <section aria-labelledby="proc-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:{{ L.split }};gap:clamp(32px,5vw,80px);align-items:start">
+      <div style="position:{{ L.sticky }};top:120px;display:flex;flex-direction:column;gap:20px">
+        <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(52,65,77,.14);font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#34414D"><span style="width:6px;height:6px;border-radius:50%;background:#C87943"></span>How it works</span>
+        <h2 id="proc-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">From first message to estimate.</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}">
+          <span style="align-self:flex-start;display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Draft — approach to confirm</span>
+        </sc-if>
+        <div aria-hidden="true" style="height:4px;border-radius:4px;background:#E7EAED;overflow:hidden;max-width:320px;margin-top:8px"><div style="height:4px;width:{{ procFill }};background:#C87943;transition:width .5s ease"></div></div>
+        <a class="btn btn-primary" href="#/estimate" style="align-self:flex-start;min-height:54px;padding:0 8px 0 24px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF;gap:12px;transition:gap .25s" style-hover="gap:18px">Start step one<span style="width:38px;height:38px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      </div>
+      <ol style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+        <sc-for list="{{ procSteps }}" as="st" hint-placeholder-count="4">
+          <li data-step="{{ st.i }}" style="min-height:{{ L.stepH }};padding:clamp(24px,3vw,40px) 0;border-top:1px solid rgba(52,65,77,.16);display:flex;flex-direction:column;justify-content:center;gap:14px">
+            <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(56px,7vw,104px);line-height:.9;letter-spacing:-.05em;color:{{ st.fill }};-webkit-text-stroke:2px #C87943;transition:color .4s ease" aria-hidden="true">{{ st.n }}</span>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(24px,2.4vw,34px);letter-spacing:-.02em;margin:0;color:{{ st.ink }};transition:color .4s">{{ st.t }}</h3>
+            <p style="font-size:18px;line-height:1.6;margin:0;color:{{ st.body }};max-width:44ch;transition:color .4s">{{ st.d }}</p>
+          </li>
+        </sc-for>
+      </ol>
+    </section>
+
+    <section aria-labelledby="final-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px)">
+      <div data-reveal="1" style="position:relative;border-radius:28px;background:#F5E9DF;padding:clamp(36px,6vw,96px) clamp(24px,5vw,80px);display:grid;grid-template-columns:{{ L.feat }};gap:32px;align-items:center;overflow:hidden">
+        <div style="display:flex;flex-direction:column;gap:22px;position:relative">
+          <h2 id="final-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(38px,5.6vw,88px);line-height:.98;letter-spacing:-.045em;color:#222D37;margin:0">Have a project in mind? Start with the details.</h2>
+          <p style="font-size:18px;line-height:1.6;color:#4A5560;margin:0;max-width:46ch">Four short steps: the project, the property, the details and how to reach you. Photos are optional.</p>
+          <a class="btn btn-primary" href="#/estimate" style="align-self:flex-start;min-height:58px;padding:0 10px 0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Tell Us About Your Project<span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+        </div>
+        <a href="#/estimate" aria-label="Get an estimate" style="justify-self:center;position:relative;width:clamp(160px,18vw,220px);height:clamp(160px,18vw,220px);display:block;color:#222D37" style-hover="color:#A95F2D">
+          <svg viewBox="0 0 200 200" style="position:absolute;inset:0;width:100%;height:100%;animation:dr-spin 22s linear infinite" aria-hidden="true"><defs><path id="dr-circle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"></path></defs><text style="font-family:Manrope,sans-serif;font-weight:800;font-size:15.5px;letter-spacing:4px;text-transform:uppercase" fill="currentColor"><textPath href="#dr-circle">Get an estimate · Get an estimate · </textPath></text></svg>
+          <span style="position:absolute;inset:30%;border-radius:50%;background:#222D37;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:30px"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span>
+        </a>
+      </div>
+    </section>
+  </div>
+</sc-if>
+
+<!-- ================= ROOFING ================= -->
+<sc-if value="{{ isRoofing }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Roofing">
+    <section aria-labelledby="roof-h1" style="background:#222D37;color:#FFFFFF;padding:clamp(120px,14vw,168px) 0 clamp(48px,6vw,88px)">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:grid;grid-template-columns:{{ L.split }};gap:clamp(28px,4vw,64px);align-items:end">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span data-rise="1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.2);font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#F5E9DF"><span style="width:6px;height:6px;border-radius:50%;background:#C87943"></span>Roofing</span>
+          <h1 id="roof-h1" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(44px,7vw,108px);line-height:.95;letter-spacing:-.045em;margin:0">
+            <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block">Roofing work,</span></span>
+            <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block;color:#E9B48C">explained clearly.</span></span>
+          </h1>
+        </div>
+        <div data-rise="1" style="display:flex;flex-direction:column;gap:24px">
+          <p style="font-size:clamp(18px,1.4vw,20px);line-height:1.6;color:#D5DBE0;margin:0;max-width:46ch">Whether you have noticed a problem or are planning ahead, start by telling us what you are seeing. Those details shape the conversation about the right next step for your roof.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <a class="btn btn-primary" href="#/estimate?type=roofing" style="min-height:56px;padding:0 10px 0 26px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Request a roofing estimate<span style="width:38px;height:38px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+            <button onClick="{{ toRoofProjects }}" class="btn" style="min-height:56px;padding:0 24px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;border:1px solid rgba(255,255,255,.45);color:#FFFFFF;background:transparent" style-hover="background:rgba(255,255,255,.1)">See roofing projects</button>
+          </div>
+        </div>
+      </div>
+      <div style="max-width:1320px;margin:clamp(40px,5vw,72px) auto 0;padding:0 clamp(20px,4vw,56px)">
+        <div data-reveal-img="1" style="position:relative;height:clamp(300px,46vw,620px);border-radius:24px;overflow:hidden;background:#2E3A45"><image-slot id="roof-hero" shape="rect" placeholder="Illustrative placeholder — roofing hero photograph"></image-slot></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="roof-svc-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0">
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:clamp(28px,3.6vw,48px)">
+        <h2 id="roof-svc-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">What are you dealing with?</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}">
+          <span style="display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Candidate services — confirm before launch</span>
+        </sc-if>
+      </div>
+      <div style="display:flex;flex-direction:{{ L.panelDir }};gap:12px;height:{{ L.panelH }}">
+        <sc-for list="{{ roofPanels }}" as="s" hint-placeholder-count="4">
+          <div onMouseEnter="{{ s.activate }}" style="position:relative;flex:{{ s.flex }};min-width:0;height:{{ s.h }};border-radius:20px;overflow:hidden;background:#2E3A45;color:#FFFFFF;transition:flex .7s cubic-bezier(.6,0,.2,1),height .6s cubic-bezier(.6,0,.2,1)">
+            <div style="position:absolute;inset:0"><image-slot id="{{ s.slot }}" shape="rect" placeholder="Illustrative placeholder"></image-slot></div>
+            <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:{{ s.shade }};transition:background .5s"></div>
+            <sc-if value="{{ s.notActive }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ s.activate }}" onFocus="{{ s.activate }}" aria-expanded="false" aria-label="{{ s.showLabel }}" style="position:absolute;inset:0;width:100%;background:transparent;border:0;color:#FFFFFF;cursor:pointer;display:flex;flex-direction:{{ L.collapsedDir }};align-items:{{ L.collapsedAlign }};justify-content:space-between;padding:22px;text-align:left">
+                <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:15px;color:#E9B48C">{{ s.num }}</span>
+                <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em;writing-mode:{{ L.writing }};transform:{{ L.rotate }};white-space:nowrap">{{ s.name }}</span>
+              </button>
+            </sc-if>
+            <sc-if value="{{ s.isActive }}" hint-placeholder-val="{{ false }}">
+              <div aria-live="polite" style="position:absolute;left:0;right:0;bottom:0;padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:12px;pointer-events:none">
+                <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:15px;color:#E9B48C">{{ s.num }}</span>
+                <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(28px,3vw,44px);line-height:1;letter-spacing:-.03em;margin:0">{{ s.name }}</h3>
+                <p style="margin:0;font-size:17px;line-height:1.55;color:#E7EAED;max-width:40ch">{{ s.need }}</p>
+                <a href="#/estimate?type=roofing" aria-label="{{ s.cta }}" style="pointer-events:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px;border-radius:999px;background:#FFFFFF;color:#222D37;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;text-decoration:none" style-hover="background:#F5E9DF;color:#222D37">Request an estimate <i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></a>
+              </div>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section aria-labelledby="roof-detail-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:{{ L.feat }};gap:clamp(20px,3vw,40px);align-items:end">
+      <div data-reveal="1" style="display:grid;grid-template-columns:1.4fr 1fr;gap:12px">
+        <div style="position:relative;grid-row:span 2;min-height:clamp(280px,34vw,460px);border-radius:20px;overflow:hidden;background:#E7EAED"><image-slot id="roof-material-1" shape="rect" placeholder="Illustrative — material close-up"></image-slot></div>
+        <div style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;background:#E7EAED"><image-slot id="roof-material-2" shape="rect" placeholder="Illustrative — process detail"></image-slot></div>
+        <div style="position:relative;aspect-ratio:1/1;border-radius:20px;overflow:hidden;background:#E7EAED"><image-slot id="roof-material-3" shape="rect" placeholder="Illustrative — finished edge"></image-slot></div>
+      </div>
+      <div data-reveal="1" style="display:flex;flex-direction:column;gap:16px">
+        <span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#68737D">Materials &amp; process</span>
+        <h2 id="roof-detail-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(28px,3.2vw,46px);line-height:1.04;letter-spacing:-.035em;color:#222D37;margin:0">The details that sit above your ceiling.</h2>
+        <p style="font-size:17px;line-height:1.65;color:#4A5560;margin:0">Material options and process photography will be added here once supplied and approved by Doyle Roofing &amp; Remodeling.</p>
+      </div>
+    </section>
+
+    <section id="roof-projects" aria-labelledby="roof-proj-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:28px">
+        <h2 id="roof-proj-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Roofing projects</h2>
+        <a href="#/projects?cat=roofing" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;text-decoration:none;border-bottom:2px solid #C87943;padding:6px 0" style-hover="color:#A95F2D">All roofing projects</a>
+      </div>
+      <sc-if value="{{ hasRoofProjects }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(12px,1.6vw,20px)">
+          <sc-for list="{{ roofProjects }}" as="p" hint-placeholder-count="3">
+            <article data-reveal="1" onMouseEnter="{{ p.hoverIn }}" onMouseLeave="{{ p.hoverOut }}" style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:#E7EAED">
+              <div style="position:absolute;inset:0;transform:{{ p.scale }};transition:transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none"><image-slot id="{{ p.slot }}" shape="rect" placeholder="Illustrative placeholder — approved project photograph"></image-slot></div>
+              <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,45,55,0) 50%,rgba(34,45,55,.9) 100%);pointer-events:none"></div>
+              <div style="position:absolute;left:0;right:0;bottom:0;padding:22px;display:flex;flex-direction:column;gap:8px;pointer-events:none"><span style="align-self:flex-start;padding:5px 11px;border-radius:999px;border:1px dashed rgba(255,255,255,.6);color:#FFFFFF;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">Sample entry</span><h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;margin:0;color:#FFFFFF">{{ p.title }}</h3></div>
+              <button onClick="{{ p.open }}" aria-label="{{ p.openLabel }}" style="position:absolute;inset:0;background:transparent;border:0;cursor:pointer;border-radius:20px"></button>
+            </article>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noRoofProjects }}" hint-placeholder-val="{{ false }}"><p style="font-size:18px;color:#222D37;margin:0">No roofing projects have been published yet.</p></sc-if>
+    </section>
+
+    <section aria-labelledby="roof-faq-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:{{ L.faq }};gap:clamp(24px,4vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <h2 id="roof-faq-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Roofing questions</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Draft answers — client review</span></sc-if>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ roofFaqs }}" as="q" hint-placeholder-count="3">
+          <div style="border-radius:16px;background:{{ q.bg }};transition:background .3s">
+            <h3 style="margin:0"><button id="{{ q.btnId }}" aria-expanded="{{ q.expanded }}" aria-controls="{{ q.panelId }}" onClick="{{ q.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:none;border:0;text-align:left;cursor:pointer;font-family:Manrope,sans-serif;font-weight:700;font-size:clamp(17px,1.4vw,20px);color:#222D37"><span>{{ q.q }}</span><span style="flex:none;width:36px;height:36px;border-radius:50%;background:{{ q.iconBg }};color:{{ q.iconInk }};display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;transform:{{ q.rot }}"><i class="ph-duotone ph-plus" aria-hidden="true"></i></span></button></h3>
+            <div id="{{ q.panelId }}" role="region" aria-labelledby="{{ q.btnId }}" style="display:grid;grid-template-rows:{{ q.rows }};visibility:{{ q.vis }};transition:grid-template-rows .32s ease,visibility .32s"><div style="overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.65;color:#4A5560;max-width:62ch">{{ q.a }}</p></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section aria-label="Roofing estimate" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px)">
+      <div data-reveal="1" style="border-radius:28px;background:#222D37;padding:clamp(36px,5vw,72px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4vw,60px);line-height:1;letter-spacing:-.04em;color:#FFFFFF;margin:0;max-width:16ch">Tell us what is happening with your roof.</h2>
+        <a class="btn btn-primary" href="#/estimate?type=roofing" style="min-height:58px;padding:0 10px 0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Request a roofing estimate<span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      </div>
+    </section>
+  </div>
+</sc-if>
+
+<!-- ================= REMODELING ================= -->
+<sc-if value="{{ isRemodeling }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Remodeling">
+    <section aria-labelledby="rem-h1" style="background:#F5E9DF;padding:clamp(120px,14vw,168px) 0 clamp(48px,6vw,88px)">
+      <div style="max-width:1320px;margin:0 auto;padding:0 clamp(20px,4vw,56px);display:grid;grid-template-columns:{{ L.split }};gap:clamp(28px,4vw,64px);align-items:center">
+        <div style="display:flex;flex-direction:column;gap:24px">
+          <span data-rise="1" style="align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#FFFFFF;font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6A3A1B"><span style="width:6px;height:6px;border-radius:50%;background:#C87943"></span>Remodeling</span>
+          <h1 id="rem-h1" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(44px,7vw,108px);line-height:.95;letter-spacing:-.045em;margin:0;color:#222D37">
+            <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block">Start with how</span></span>
+            <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block;color:#A95F2D">you live.</span></span>
+          </h1>
+          <p data-rise="1" style="font-size:clamp(18px,1.4vw,20px);line-height:1.6;color:#4A5560;margin:0;max-width:44ch">Tell us which space you are thinking about, what is not working today and what you would like it to become. You do not need finished plans to start.</p>
+          <div data-rise="1" style="display:flex;flex-wrap:wrap;gap:12px">
+            <a class="btn btn-primary" href="#/estimate?type=remodeling" style="min-height:56px;padding:0 10px 0 26px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Enquire about a remodel<span style="width:38px;height:38px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+            <button onClick="{{ toRemProjects }}" class="btn" style="min-height:56px;padding:0 24px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;border:1px solid #34414D;color:#222D37;background:transparent" style-hover="background:#FFFFFF">See remodeling projects</button>
+          </div>
+        </div>
+        <div style="position:relative;height:clamp(360px,44vw,620px)">
+          <div data-reveal-img="1" style="position:absolute;left:0;top:0;width:76%;height:82%;border-radius:24px;overflow:hidden;background:#EADBCD"><image-slot id="rem-hero" shape="rect" placeholder="Illustrative placeholder — renovated interior"></image-slot></div>
+          <div data-reveal-img="1" style="position:absolute;right:0;bottom:0;width:48%;height:52%;border-radius:24px;overflow:hidden;background:#E7EAED;border:8px solid #F5E9DF"><image-slot id="rem-hero-2" shape="rect" placeholder="Illustrative — detail"></image-slot></div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="rem-svc-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0">
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:clamp(28px,3.6vw,48px)">
+        <h2 id="rem-svc-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Which space are you planning?</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Candidate categories — confirm before launch</span></sc-if>
+      </div>
+      <div style="display:grid;grid-template-columns:{{ L.explorer }};gap:clamp(20px,4vw,56px);align-items:stretch">
+        <div role="tablist" aria-label="Remodeling categories" aria-orientation="vertical" style="display:flex;flex-direction:column">
+          <sc-for list="{{ remTabs }}" as="t" hint-placeholder-count="4">
+            <button role="tab" id="{{ t.tabId }}" aria-selected="{{ t.selected }}" aria-controls="rem-panel" tabIndex="{{ t.tab }}" onClick="{{ t.select }}" onMouseEnter="{{ t.select }}" onKeyDown="{{ remTabKey }}" style="display:grid;grid-template-columns:56px 1fr 28px;align-items:center;gap:12px;padding:clamp(18px,2vw,26px) 4px;background:none;border:0;border-top:1px solid rgba(52,65,77,.16);text-align:left;cursor:pointer;color:{{ t.ink }};transition:color .3s">
+              <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:15px;color:{{ t.numInk }}">{{ t.num }}</span>
+              <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(22px,2.4vw,34px);letter-spacing:-.025em;line-height:1.05">{{ t.name }}</span>
+              <i class="ph-duotone ph-arrow-right" aria-hidden="true" style="font-size:20px;color:#A95F2D;opacity:{{ t.arrowOp }};transform:{{ t.arrowX }};transition:opacity .3s,transform .3s"></i>
+            </button>
+          </sc-for>
+        </div>
+        <div id="rem-panel" role="tabpanel" aria-labelledby="{{ remActive.tabId }}" style="position:relative;min-height:clamp(380px,40vw,560px);border-radius:24px;overflow:hidden;background:#E7EAED">
+          <sc-for list="{{ remTabs }}" as="t" hint-placeholder-count="1">
+            <div style="position:absolute;inset:0;opacity:{{ t.imgOp }};transform:{{ t.imgScale }};transition:opacity .6s ease,transform 1.2s cubic-bezier(.2,.7,.2,1);pointer-events:{{ t.pe }}"><image-slot id="{{ t.slot }}" shape="rect" placeholder="Illustrative placeholder"></image-slot></div>
+          </sc-for>
+          <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(34,45,55,0) 45%,rgba(34,45,55,.9) 100%)"></div>
+          <div aria-live="polite" style="position:absolute;left:0;right:0;bottom:0;padding:clamp(22px,3vw,40px);display:flex;flex-direction:column;gap:12px;color:#FFFFFF;pointer-events:none">
+            <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,3vw,42px);letter-spacing:-.03em;margin:0">{{ remActive.name }}</h3>
+            <p style="margin:0;font-size:17px;line-height:1.55;color:#E7EAED;max-width:44ch">{{ remActive.need }}</p>
+            <a href="#/estimate?type=remodeling" style="pointer-events:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px;border-radius:999px;background:#FFFFFF;color:#222D37;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;text-decoration:none" style-hover="background:#F5E9DF;color:#222D37">Enquire about this <i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rem-projects" aria-labelledby="rem-proj-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:28px">
+        <h2 id="rem-proj-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Remodeling projects</h2>
+        <a href="#/projects?cat=remodeling" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;text-decoration:none;border-bottom:2px solid #C87943;padding:6px 0" style-hover="color:#A95F2D">All remodeling projects</a>
+      </div>
+      <sc-if value="{{ hasRemProjects }}" hint-placeholder-val="{{ true }}">
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(12px,1.6vw,20px)">
+          <sc-for list="{{ remProjects }}" as="p" hint-placeholder-count="3">
+            <article data-reveal="1" onMouseEnter="{{ p.hoverIn }}" onMouseLeave="{{ p.hoverOut }}" style="position:relative;aspect-ratio:4/5;border-radius:20px;overflow:hidden;background:#E7EAED">
+              <div style="position:absolute;inset:0;transform:{{ p.scale }};transition:transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none"><image-slot id="{{ p.slot }}" shape="rect" placeholder="Illustrative placeholder — approved project photograph"></image-slot></div>
+              <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,45,55,0) 50%,rgba(34,45,55,.9) 100%);pointer-events:none"></div>
+              <div style="position:absolute;left:0;right:0;bottom:0;padding:22px;display:flex;flex-direction:column;gap:8px;pointer-events:none"><span style="align-self:flex-start;padding:5px 11px;border-radius:999px;border:1px dashed rgba(255,255,255,.6);color:#FFFFFF;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">Sample entry</span><h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em;margin:0;color:#FFFFFF">{{ p.title }}</h3></div>
+              <button onClick="{{ p.open }}" aria-label="{{ p.openLabel }}" style="position:absolute;inset:0;background:transparent;border:0;cursor:pointer;border-radius:20px"></button>
+            </article>
+          </sc-for>
+        </div>
+      </sc-if>
+      <sc-if value="{{ noRemProjects }}" hint-placeholder-val="{{ false }}"><p style="font-size:18px;color:#222D37;margin:0">No remodeling projects have been published yet.</p></sc-if>
+    </section>
+
+    <section aria-labelledby="rem-faq-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:{{ L.faq }};gap:clamp(24px,4vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <h2 id="rem-faq-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Remodeling questions</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Draft answers — client review</span></sc-if>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ remFaqs }}" as="q" hint-placeholder-count="3">
+          <div style="border-radius:16px;background:{{ q.bg }};transition:background .3s">
+            <h3 style="margin:0"><button id="{{ q.btnId }}" aria-expanded="{{ q.expanded }}" aria-controls="{{ q.panelId }}" onClick="{{ q.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:none;border:0;text-align:left;cursor:pointer;font-family:Manrope,sans-serif;font-weight:700;font-size:clamp(17px,1.4vw,20px);color:#222D37"><span>{{ q.q }}</span><span style="flex:none;width:36px;height:36px;border-radius:50%;background:{{ q.iconBg }};color:{{ q.iconInk }};display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;transform:{{ q.rot }}"><i class="ph-duotone ph-plus" aria-hidden="true"></i></span></button></h3>
+            <div id="{{ q.panelId }}" role="region" aria-labelledby="{{ q.btnId }}" style="display:grid;grid-template-rows:{{ q.rows }};visibility:{{ q.vis }};transition:grid-template-rows .32s ease,visibility .32s"><div style="overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.65;color:#4A5560;max-width:62ch">{{ q.a }}</p></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section aria-label="Remodeling enquiry" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px)">
+      <div data-reveal="1" style="border-radius:28px;background:#F5E9DF;padding:clamp(36px,5vw,72px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4vw,60px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0;max-width:16ch">Plans still taking shape? Start here.</h2>
+        <a class="btn btn-primary" href="#/estimate?type=remodeling" style="min-height:58px;padding:0 10px 0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Enquire about a remodel<span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      </div>
+    </section>
+  </div>
+</sc-if>
+
+<!-- ================= PROJECTS ================= -->
+<sc-if value="{{ isProjects }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Projects" style="max-width:1320px;margin:0 auto;padding:clamp(120px,14vw,168px) clamp(20px,4vw,56px) clamp(72px,9vw,128px)">
+    <div style="display:grid;grid-template-columns:{{ L.split }};gap:clamp(20px,4vw,64px);align-items:end">
+      <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(46px,8vw,124px);line-height:.92;letter-spacing:-.05em;margin:0;color:#222D37">
+        <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block">Project</span></span>
+        <span style="display:block;overflow:hidden;padding-bottom:.06em"><span data-rise="1" style="display:block;color:#A95F2D">gallery.</span></span>
+      </h1>
+      <div data-rise="1" style="display:flex;flex-direction:column;gap:16px">
+        <p style="font-size:18px;line-height:1.6;color:#4A5560;margin:0">Browse roofing and remodeling work by category. Open any project for photographs and details.</p>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><p style="margin:0;padding:14px 18px;border-radius:14px;background:#FFFFFF;border:1px dashed #68737D;font-size:15px;line-height:1.55;color:#34414D;display:flex;gap:10px"><i class="ph-duotone ph-info" aria-hidden="true" style="font-size:20px;flex:none;color:#A95F2D"></i><span>Entries are sample placeholders showing how approved projects will appear. None represent completed Doyle Roofing &amp; Remodeling work.</span></p></sc-if>
+      </div>
+    </div>
+    <div role="group" aria-label="Filter projects by category" style="position:relative;display:inline-flex;gap:4px;padding:5px;margin:clamp(32px,4vw,56px) 0 28px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(52,65,77,.12)">
+      <sc-for list="{{ filters }}" as="ft" hint-placeholder-count="3">
+        <button aria-pressed="{{ ft.pressed }}" onClick="{{ ft.onClick }}" style="min-height:46px;padding:0 20px;display:inline-flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;border-radius:999px;cursor:pointer;border:0;background:{{ ft.bg }};color:{{ ft.color }};transition:background .3s,color .3s">{{ ft.label }}<span style="min-width:24px;height:24px;padding:0 6px;border-radius:999px;background:{{ ft.countBg }};font-size:12px;display:inline-flex;align-items:center;justify-content:center">{{ ft.count }}</span></button>
+      </sc-for>
+    </div>
+    <p aria-live="polite" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ filterAnnounce }}</p>
+    <sc-if value="{{ hasGallery }}" hint-placeholder-val="{{ true }}">
+      <div ref="{{ galleryRef }}" style="display:grid;grid-template-columns:{{ L.bento }};grid-auto-rows:{{ L.autoRows }};grid-auto-flow:dense;gap:clamp(12px,1.6vw,20px)">
+        <sc-for list="{{ gallery }}" as="p" hint-placeholder-count="6">
+          <article onMouseEnter="{{ p.hoverIn }}" onMouseLeave="{{ p.hoverOut }}" style="position:relative;grid-column:{{ p.col }};grid-row:{{ p.row }};border-radius:20px;overflow:hidden;background:#E7EAED">
+            <div style="position:absolute;inset:0;transform:{{ p.scale }};transition:transform .9s cubic-bezier(.2,.7,.2,1);pointer-events:none"><image-slot id="{{ p.slot }}" shape="rect" placeholder="Illustrative placeholder — approved project photograph"></image-slot></div>
+            <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(34,45,55,0) 45%,rgba(34,45,55,.9) 100%);pointer-events:none"></div>
+            <span aria-hidden="true" style="position:absolute;top:16px;right:16px;width:46px;height:46px;border-radius:50%;background:#FFFFFF;color:#222D37;display:flex;align-items:center;justify-content:center;font-size:18px;transform:{{ p.arrow }};transition:transform .4s;pointer-events:none"><i class="ph-duotone ph-arrow-up-right"></i></span>
+            <div style="position:absolute;left:0;right:0;bottom:0;padding:22px;display:flex;flex-direction:column;gap:8px;pointer-events:none">
+              <span style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:5px 11px;border-radius:999px;background:#F5E9DF;color:#6A3A1B;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">{{ p.cat }}</span><span style="padding:5px 11px;border-radius:999px;border:1px dashed rgba(255,255,255,.6);color:#FFFFFF;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">Sample entry</span></span>
+              <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:{{ p.titleSize }};letter-spacing:-.025em;line-height:1.05;margin:0;color:#FFFFFF">{{ p.title }}</h2>
+            </div>
+            <button onClick="{{ p.open }}" aria-label="{{ p.openLabel }}" style="position:absolute;inset:0;background:transparent;border:0;cursor:pointer;border-radius:20px"></button>
+          </article>
+        </sc-for>
+      </div>
+    </sc-if>
+    <sc-if value="{{ galleryEmpty }}" hint-placeholder-val="{{ false }}">
+      <div style="border-radius:24px;background:#FFFFFF;padding:clamp(40px,6vw,80px);display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+        <i class="ph-duotone ph-images" aria-hidden="true" style="font-size:44px;color:#A95F2D"></i>
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:30px;letter-spacing:-.02em;margin:0;color:#222D37">{{ emptyTitle }}</h2>
+        <p style="font-size:17px;line-height:1.6;margin:0;color:#4A5560;max-width:52ch">Approved projects will appear here as they are published. In the meantime, you are welcome to tell us about your own project.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px">
+          <sc-if value="{{ showAllBtn }}" hint-placeholder-val="{{ false }}"><button class="btn" onClick="{{ showAll }}" style="min-height:50px;padding:0 22px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;border:1px solid #34414D;color:#222D37;background:transparent">Show all projects</button></sc-if>
+          <a class="btn btn-primary" href="#/estimate" style="min-height:50px;padding:0 22px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF">Get an Estimate</a>
+        </div>
+      </div>
+    </sc-if>
+  </div>
+</sc-if>
+
+<!-- ================= ABOUT ================= -->
+<sc-if value="{{ isAbout }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="About and FAQs">
+    <section aria-labelledby="about-h1" style="max-width:1320px;margin:0 auto;padding:clamp(120px,14vw,168px) clamp(20px,4vw,56px) 0">
+      <span data-rise="1" style="display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(52,65,77,.14);font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#34414D"><span style="width:6px;height:6px;border-radius:50%;background:#C87943"></span>About &amp; FAQs</span>
+      <h1 id="about-h1" ref="{{ statementRef }}" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,80px);line-height:1.04;letter-spacing:-.04em;color:#222D37;margin:28px 0 0;max-width:20ch;text-wrap:balance">
+        <sc-for list="{{ statementWords }}" as="w" hint-placeholder-count="12"><span data-w="1" style="opacity:{{ statementOp }};transition:opacity .25s">{{ w }} </span></sc-for>
+      </h1>
+    </section>
+    <section aria-labelledby="facts-h" style="max-width:1320px;margin:0 auto;padding:clamp(56px,7vw,96px) clamp(20px,4vw,56px) 0">
+      <h2 id="facts-h" style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#68737D;margin:0 0 20px">Business facts</h2>
+      <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:12px">
+        <sc-for list="{{ facts }}" as="fc" hint-placeholder-count="6">
+          <div data-reveal="1" style="border-radius:20px;background:{{ fc.bg }};color:{{ fc.ink }};padding:26px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;gap:16px">
+            <dt style="display:flex;align-items:center;gap:10px;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;opacity:.85"><i class="{{ fc.icon }}" aria-hidden="true" style="font-size:20px;color:#C87943"></i>{{ fc.k }}</dt>
+            <dd style="margin:0;font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(19px,1.8vw,24px);letter-spacing:-.015em;line-height:1.2;word-break:break-word">
+              <sc-if value="{{ fc.href }}" hint-placeholder-val="{{ false }}"><a href="{{ fc.href }}" style="color:inherit" style-hover="color:#A95F2D">{{ fc.v }}</a></sc-if>
+              <sc-if value="{{ fc.plain }}" hint-placeholder-val="{{ true }}"><span>{{ fc.v }}</span></sc-if>
+            </dd>
+          </div>
+        </sc-for>
+      </dl>
+    </section>
+    <section aria-labelledby="approach-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0">
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:36px">
+        <h2 id="approach-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Working approach</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Draft — approach to confirm</span></sc-if>
+      </div>
+      <ol style="list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+        <sc-for list="{{ procStepsPlain }}" as="st" hint-placeholder-count="4">
+          <li data-reveal="1" style="border-radius:20px;background:#FFFFFF;border:1px solid rgba(52,65,77,.1);padding:28px;display:flex;flex-direction:column;gap:12px;transition:transform .3s,border-color .3s" style-hover="transform:translateY(-4px);border-color:#C87943">
+            <span style="font-family:Manrope,sans-serif;font-weight:800;font-size:56px;line-height:.9;letter-spacing:-.05em;color:transparent;-webkit-text-stroke:1.5px #C87943" aria-hidden="true">{{ st.n }}</span>
+            <h3 style="font-family:Manrope,sans-serif;font-weight:800;font-size:22px;margin:0;color:#222D37">{{ st.t }}</h3>
+            <p style="font-size:16px;line-height:1.6;margin:0;color:#4A5560">{{ st.d }}</p>
+          </li>
+        </sc-for>
+      </ol>
+    </section>
+    <section aria-labelledby="faq-h" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px) 0;display:grid;grid-template-columns:{{ L.faq }};gap:clamp(24px,4vw,64px)">
+      <div style="display:flex;flex-direction:column;gap:14px;align-items:flex-start">
+        <h2 id="faq-h" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,52px);line-height:1;letter-spacing:-.04em;color:#222D37;margin:0">Common questions</h2>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span style="display:inline-flex;align-items:center;gap:6px;font-family:Manrope,sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#34414D;border:1px dashed #68737D;padding:5px 10px;border-radius:999px;background:#FFFFFF"><i class="ph-duotone ph-note-pencil" aria-hidden="true"></i>Draft answers — client review</span></sc-if>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <sc-for list="{{ genFaqs }}" as="q" hint-placeholder-count="5">
+          <div style="border-radius:16px;background:{{ q.bg }};transition:background .3s">
+            <h3 style="margin:0"><button id="{{ q.btnId }}" aria-expanded="{{ q.expanded }}" aria-controls="{{ q.panelId }}" onClick="{{ q.toggle }}" style="width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 24px;background:none;border:0;text-align:left;cursor:pointer;font-family:Manrope,sans-serif;font-weight:700;font-size:clamp(17px,1.4vw,20px);color:#222D37"><span>{{ q.q }}</span><span style="flex:none;width:36px;height:36px;border-radius:50%;background:{{ q.iconBg }};color:{{ q.iconInk }};display:flex;align-items:center;justify-content:center;transition:transform .3s,background .3s;transform:{{ q.rot }}"><i class="ph-duotone ph-plus" aria-hidden="true"></i></span></button></h3>
+            <div id="{{ q.panelId }}" role="region" aria-labelledby="{{ q.btnId }}" style="display:grid;grid-template-rows:{{ q.rows }};visibility:{{ q.vis }};transition:grid-template-rows .32s ease,visibility .32s"><div style="overflow:hidden"><p style="margin:0;padding:0 24px 24px;font-size:17px;line-height:1.65;color:#4A5560;max-width:62ch">{{ q.a }}</p></div></div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+    <section aria-label="Estimate" style="max-width:1320px;margin:0 auto;padding:clamp(72px,9vw,128px) clamp(20px,4vw,56px)">
+      <div data-reveal="1" style="border-radius:28px;background:#222D37;padding:clamp(36px,5vw,72px);display:flex;flex-wrap:wrap;gap:24px;justify-content:space-between;align-items:center">
+        <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4vw,60px);line-height:1;letter-spacing:-.04em;color:#FFFFFF;margin:0;max-width:16ch">Ready to talk about your project?</h2>
+        <a class="btn btn-primary" href="#/estimate" style="min-height:58px;padding:0 10px 0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Get an Estimate<span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+      </div>
+    </section>
+  </div>
+</sc-if>
+
+<!-- ================= ESTIMATE WIZARD ================= -->
+<sc-if value="{{ isEstimate }}" hint-placeholder-val="{{ false }}">
+  <div data-screen-label="Request an Estimate" style="max-width:1320px;margin:0 auto;padding:clamp(108px,12vw,140px) clamp(20px,4vw,56px) clamp(64px,8vw,112px);display:grid;grid-template-columns:{{ L.est }};gap:clamp(16px,2vw,28px);align-items:start">
+    <aside style="position:{{ L.sticky }};top:100px;border-radius:24px;background:#222D37;color:#FFFFFF;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:26px">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E9B48C">Request an estimate</span>
+        <h1 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(32px,3.4vw,48px);line-height:1;letter-spacing:-.04em;margin:0">Tell us about your project.</h1>
+        <p style="margin:0;font-size:16px;line-height:1.55;color:#D5DBE0">Four short steps. Everything you enter is kept as you move back and forth.</p>
+      </div>
+      <sc-if value="{{ showStepper }}" hint-placeholder-val="{{ true }}">
+        <ol aria-label="Form progress" style="list-style:none;margin:0;padding:0;display:flex;flex-direction:{{ L.stepperDir }};gap:4px;flex-wrap:wrap">
+          <sc-for list="{{ wSteps }}" as="ws" hint-placeholder-count="5">
+            <li style="flex:{{ L.stepperFlex }}"><button type="button" onClick="{{ ws.go }}" disabled="{{ ws.locked }}" aria-current="{{ ws.current }}" style="width:100%;display:flex;align-items:center;gap:12px;min-height:48px;padding:6px 12px 6px 6px;border-radius:999px;border:0;background:{{ ws.bg }};color:{{ ws.ink }};cursor:pointer;font-family:Manrope,sans-serif;font-weight:700;font-size:14px;text-align:left;transition:background .3s,color .3s"><span style="flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:{{ ws.dotBg }};color:{{ ws.dotInk }};font-size:{{ ws.dotSize }}"><sc-if value="{{ ws.done }}" hint-placeholder-val="{{ false }}"><i class="ph-duotone ph-check" aria-hidden="true"></i></sc-if><sc-if value="{{ ws.notDone }}" hint-placeholder-val="{{ true }}"><span>{{ ws.n }}</span></sc-if></span><span>{{ ws.label }}<span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">{{ ws.sr }}</span></span></button></li>
+          </sc-for>
+        </ol>
+      </sc-if>
+      <div style="border-top:1px solid rgba(255,255,255,.14);padding-top:20px;display:flex;flex-direction:column;gap:8px">
+        <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:13px;color:#B9C2CA">Prefer to talk?</span>
+        <a href="tel:+14107766528" style="font-family:Manrope,sans-serif;font-weight:800;font-size:20px;color:#FFFFFF;text-decoration:none" style-hover="color:#E9B48C">+1 (410) 776-6528</a>
+        <a href="mailto:paxton.doyle@yahoo.com" style="font-size:16px;color:#D5DBE0;word-break:break-word" style-hover="color:#FFFFFF">paxton.doyle@yahoo.com</a>
+      </div>
+      <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><p style="margin:0;padding:12px 14px;border-radius:12px;border:1px dashed rgba(255,255,255,.35);font-size:14px;line-height:1.5;color:#D5DBE0;display:flex;gap:10px"><i class="ph-duotone ph-flask" aria-hidden="true" style="font-size:18px;flex:none;color:#E9B48C"></i><span>Prototype: submissions are simulated. Nothing is sent, stored or uploaded.</span></p></sc-if>
+    </aside>
+
+    <div ref="{{ formTopRef }}" style="border-radius:24px;background:#FFFFFF;overflow:hidden;border:1px solid rgba(52,65,77,.08)">
+      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <div aria-hidden="true" style="height:6px;background:#F5E9DF"><div style="height:6px;width:{{ wProgress }};background:#C87943;transition:width .5s cubic-bezier(.6,0,.2,1)"></div></div>
+      </sc-if>
+
+      <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+        <div ref="{{ successRef }}" tabindex="-1" role="status" style="outline:none;padding:clamp(28px,5vw,64px);display:flex;flex-direction:column;gap:22px">
+          <span style="width:84px;height:84px;border-radius:50%;background:#F5E9DF;color:#A95F2D;display:flex;align-items:center;justify-content:center;font-size:44px"><i class="ph-duotone ph-check-circle" aria-hidden="true"></i></span>
+          <h2 style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,3.4vw,48px);letter-spacing:-.035em;line-height:1.02;margin:0;color:#222D37">Thanks, {{ firstName }} — your request is in.</h2>
+          <p style="font-size:18px;line-height:1.6;margin:0;color:#4A5560;max-width:52ch">Here is what you shared. Keep your reference handy if you call or email about this request.</p>
+          <p style="margin:0;align-self:flex-start;padding:10px 16px;border-radius:999px;background:#F7F7F5;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">Reference <span style="color:#A95F2D">{{ refCode }}</span> · <span style="font-weight:600;color:#68737D">prototype, simulated</span></p>
+          <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px">
+            <sc-for list="{{ summaryRows }}" as="r" hint-placeholder-count="6"><div style="border-radius:14px;background:#F7F7F5;padding:14px 16px"><dt style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#68737D">{{ r.k }}</dt><dd style="margin:4px 0 0;font-size:16px;color:#222D37;word-break:break-word">{{ r.v }}</dd></div></sc-for>
+          </dl>
+          <div style="display:flex;flex-wrap:wrap;gap:12px">
+            <button class="btn btn-primary" onClick="{{ resetForm }}" style="min-height:52px;padding:0 24px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF">Start another request</button>
+            <a class="btn" href="#/projects" style="min-height:52px;padding:0 24px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;border:1px solid #34414D;color:#222D37">Browse projects</a>
+          </div>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ showForm }}" hint-placeholder-val="{{ true }}">
+        <form noValidate onSubmit="{{ formSubmit }}" aria-busy="{{ busy }}" style="padding:clamp(24px,4vw,52px);display:flex;flex-direction:column;gap:28px">
+          <div ref="{{ stepBodyRef }}" style="display:flex;flex-direction:column;gap:26px">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:13px;color:#A95F2D">{{ stepCounter }}</span>
+              <h2 ref="{{ stepHeadRef }}" tabindex="-1" style="outline:none;font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(28px,3vw,42px);letter-spacing:-.035em;line-height:1.05;margin:0;color:#222D37">{{ stepTitle }}</h2>
+              <p style="margin:0;font-size:16px;line-height:1.55;color:#68737D">{{ stepIntro }}</p>
+            </div>
+
+            <sc-if value="{{ showSummary }}" hint-placeholder-val="{{ false }}">
+              <div ref="{{ summaryRef }}" tabindex="-1" role="alert" style="outline:none;border-radius:14px;background:#FBEDEA;border:1px solid #E7B9AF;padding:18px 20px;display:flex;flex-direction:column;gap:8px">
+                <strong style="font-family:Manrope,sans-serif;font-weight:800;font-size:16px;color:#9E2F1E;display:flex;align-items:center;gap:8px"><i class="ph-duotone ph-warning-circle" aria-hidden="true"></i>{{ summaryTitle }}</strong>
+                <ul style="margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px">
+                  <sc-for list="{{ summaryItems }}" as="it" hint-placeholder-count="2"><li><button type="button" onClick="{{ it.go }}" style="background:none;border:0;padding:2px 0;font:inherit;font-size:15px;color:#9E2F1E;text-decoration:underline;cursor:pointer;text-align:left">{{ it.msg }}</button></li></sc-for>
+                </ul>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep0 }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-direction:column;gap:22px">
+                <div role="radiogroup" aria-label="Project type" aria-describedby="f-type-err" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px">
+                  <sc-for list="{{ typeOpts }}" as="o" hint-placeholder-count="2">
+                    <label style="position:relative;display:flex;flex-direction:column;gap:18px;padding:22px;min-height:190px;border-radius:18px;cursor:pointer;background:{{ o.bg }};color:{{ o.ink }};border:2px solid {{ o.border }};transition:background .3s,color .3s,border-color .3s,transform .2s" style-hover="transform:translateY(-2px)">
+                      <span style="display:flex;justify-content:space-between;align-items:flex-start"><i class="{{ o.icon }}" aria-hidden="true" style="font-size:38px;color:{{ o.iconInk }}"></i><input type="radio" name="ptype" id="{{ o.id }}" checked="{{ o.checked }}" onChange="{{ o.onChange }}" style="width:22px;height:22px;margin:0;accent-color:#C87943"></span>
+                      <span style="margin-top:auto;display:flex;flex-direction:column;gap:4px"><span style="font-family:Manrope,sans-serif;font-weight:800;font-size:24px;letter-spacing:-.02em">{{ o.label }}</span><span style="font-size:15px;line-height:1.45;opacity:.85">{{ o.hint }}</span></span>
+                    </label>
+                  </sc-for>
+                </div>
+                <sc-if value="{{ err.type }}" hint-placeholder-val="{{ false }}"><p id="f-type-err" style="margin:0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.type }}</p></sc-if>
+                <sc-if value="{{ isRoofType }}" hint-placeholder-val="{{ false }}">
+                  <div style="border-radius:16px;background:#F7F7F5;padding:20px;display:flex;flex-direction:column;gap:18px">
+                    <fieldset style="border:0;margin:0;padding:0"><legend style="padding:0;margin-bottom:12px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">What is prompting the project? <span style="font-weight:600;color:#68737D">(optional)</span></legend>
+                      <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ roofIssueOpts }}" as="c" hint-placeholder-count="5"><label style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;cursor:pointer;border-radius:999px;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }};font-family:Manrope,sans-serif;font-weight:600;font-size:14px;transition:background .2s,color .2s"><input type="checkbox" checked="{{ c.checked }}" onChange="{{ c.onChange }}" style="width:16px;height:16px;margin:0;accent-color:#C87943">{{ c.label }}</label></sc-for></div>
+                    </fieldset>
+                    <div class="field" style="display:flex;flex-direction:column;gap:6px;max-width:320px"><label for="f-roofage" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;margin:0">Approximate roof age <span style="font-weight:600;color:#68737D">(optional)</span></label>
+                      <select class="input" id="f-roofage" value="{{ f.roofAge }}" onChange="{{ on.roofAge }}" style="min-height:52px;font-size:16px;padding:10px 14px;background:#FFFFFF;border-radius:12px"><option value="">Select…</option><option>Under 5 years</option><option>5–15 years</option><option>More than 15 years</option><option>Not sure</option></select></div>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ isRemodelType }}" hint-placeholder-val="{{ false }}">
+                  <div style="border-radius:16px;background:#F5E9DF;padding:20px">
+                    <fieldset style="border:0;margin:0;padding:0"><legend style="padding:0;margin-bottom:12px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">Which areas are you thinking about? <span style="font-weight:600;color:#6A3A1B">(optional)</span></legend>
+                      <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ areaOpts }}" as="c" hint-placeholder-count="5"><label style="display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 16px;cursor:pointer;border-radius:999px;background:{{ c.bg }};color:{{ c.color }};border:1px solid {{ c.border }};font-family:Manrope,sans-serif;font-weight:600;font-size:14px;transition:background .2s,color .2s"><input type="checkbox" checked="{{ c.checked }}" onChange="{{ c.onChange }}" style="width:16px;height:16px;margin:0;accent-color:#C87943">{{ c.label }}</label></sc-for></div>
+                    </fieldset>
+                  </div>
+                </sc-if>
+                <sc-if value="{{ showSwitchNote }}" hint-placeholder-val="{{ false }}"><p style="margin:0;font-size:14px;color:#68737D">Switching project type keeps everything else you have entered.</p></sc-if>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:26px">
+                <fieldset aria-describedby="f-property-err" style="border:0;margin:0;padding:0"><legend style="padding:0;margin-bottom:12px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">Property type</legend>
+                  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:10px"><sc-for list="{{ propOpts }}" as="o" hint-placeholder-count="4"><label style="display:flex;flex-direction:column;gap:14px;padding:16px;border-radius:16px;cursor:pointer;background:{{ o.bg }};border:2px solid {{ o.border }};transition:background .25s,border-color .25s"><span style="display:flex;justify-content:space-between"><i class="{{ o.icon }}" aria-hidden="true" style="font-size:28px;color:#A95F2D"></i><input type="radio" name="prop" id="{{ o.id }}" checked="{{ o.checked }}" onChange="{{ o.onChange }}" style="width:18px;height:18px;margin:0;accent-color:#A95F2D"></span><span style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;line-height:1.25">{{ o.label }}</span></label></sc-for></div>
+                  <sc-if value="{{ err.property }}" hint-placeholder-val="{{ false }}"><p id="f-property-err" style="margin:10px 0 0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.property }}</p></sc-if>
+                </fieldset>
+                <div class="field" style="display:flex;flex-direction:column;gap:6px">
+                  <label for="f-location" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;margin:0">Property location</label>
+                  <span id="f-location-help" style="font-size:14px;color:#68737D">Street address, or city and ZIP code.</span>
+                  <input class="input" id="f-location" autoComplete="street-address" value="{{ f.location }}" onChange="{{ on.location }}" onBlur="{{ bl.location }}" aria-invalid="{{ inv.location }}" aria-describedby="f-location-help f-location-err" style="min-height:54px;font-size:16px;padding:10px 16px;background:#F7F7F5;border-radius:12px;border-color:{{ bc.location }}">
+                  <sc-if value="{{ err.location }}" hint-placeholder-val="{{ false }}"><p id="f-location-err" style="margin:0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.location }}</p></sc-if>
+                </div>
+                <fieldset aria-describedby="f-timeline-err" style="border:0;margin:0;padding:0"><legend style="padding:0;margin-bottom:12px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">Preferred timeline</legend>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ timeOpts }}" as="o" hint-placeholder-count="5"><label style="display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:999px;cursor:pointer;background:{{ o.bg }};color:{{ o.ink }};border:1px solid {{ o.border }};font-family:Manrope,sans-serif;font-weight:600;font-size:14px;transition:background .2s,color .2s"><input type="radio" name="timeline" id="{{ o.id }}" checked="{{ o.checked }}" onChange="{{ o.onChange }}" style="width:16px;height:16px;margin:0;accent-color:#C87943">{{ o.label }}</label></sc-for></div>
+                  <sc-if value="{{ err.timeline }}" hint-placeholder-val="{{ false }}"><p id="f-timeline-err" style="margin:10px 0 0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.timeline }}</p></sc-if>
+                </fieldset>
+                <fieldset aria-describedby="f-budget-help f-budget-err" style="border:0;margin:0;padding:0"><legend style="padding:0;margin-bottom:6px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">Estimated budget</legend>
+                  <p id="f-budget-help" style="margin:0 0 12px;font-size:14px;color:#68737D">Helps prepare for the conversation. A range is not a quote.</p>
+                  <div style="display:flex;flex-wrap:wrap;gap:8px"><sc-for list="{{ budgetOpts }}" as="o" hint-placeholder-count="5"><label style="display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 16px;border-radius:999px;cursor:pointer;background:{{ o.bg }};color:{{ o.ink }};border:1px solid {{ o.border }};font-family:Manrope,sans-serif;font-weight:600;font-size:14px;transition:background .2s,color .2s"><input type="radio" name="budget" id="{{ o.id }}" checked="{{ o.checked }}" onChange="{{ o.onChange }}" style="width:16px;height:16px;margin:0;accent-color:#C87943">{{ o.label }}</label></sc-for></div>
+                  <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><p style="margin:10px 0 0;font-size:13px;color:#68737D">Ranges are placeholders pending client approval.</p></sc-if>
+                  <sc-if value="{{ err.budget }}" hint-placeholder-val="{{ false }}"><p id="f-budget-err" style="margin:10px 0 0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.budget }}</p></sc-if>
+                </fieldset>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:26px">
+                <div class="field" style="display:flex;flex-direction:column;gap:6px">
+                  <label for="f-desc" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;margin:0">Project description</label>
+                  <span id="f-desc-help" style="font-size:14px;line-height:1.5;color:#68737D">{{ descHelp }}</span>
+                  <textarea class="input" id="f-desc" rows="6" maxLength="2000" value="{{ f.desc }}" onChange="{{ on.desc }}" onBlur="{{ bl.desc }}" aria-invalid="{{ inv.desc }}" aria-describedby="f-desc-help f-desc-count f-desc-err" style="min-height:170px;font-size:16px;line-height:1.55;padding:14px 16px;background:#F7F7F5;border-radius:14px;border-color:{{ bc.desc }}"></textarea>
+                  <span id="f-desc-count" style="align-self:flex-end;font-family:Manrope,sans-serif;font-size:13px;color:#68737D">{{ descCount }}</span>
+                  <sc-if value="{{ err.desc }}" hint-placeholder-val="{{ false }}"><p id="f-desc-err" style="margin:0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.desc }}</p></sc-if>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:10px">
+                  <span id="f-files-label" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37">Photos <span style="font-weight:600;color:#68737D">(optional)</span></span>
+                  <label for="f-files" onDragOver="{{ dragOver }}" onDragLeave="{{ dragLeave }}" onDrop="{{ drop }}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:32px 20px;border-radius:18px;border:2px dashed {{ dropBorder }};background:{{ dropBg }};cursor:pointer;transition:background .2s,border-color .2s" style-hover="border-color:#A95F2D">
+                    <span style="width:56px;height:56px;border-radius:50%;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:28px;color:#A95F2D"><i class="ph-duotone ph-upload-simple" aria-hidden="true"></i></span>
+                    <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#222D37">Drag photos here or <span style="text-decoration:underline;color:#A95F2D">browse</span></span>
+                    <span style="font-size:14px;color:#68737D">JPG, PNG, WEBP or HEIC · up to 10 MB each · up to 5 photos</span>
+                  </label>
+                  <input id="f-files" type="file" multiple accept=".jpg,.jpeg,.png,.webp,.heic,.heif,image/jpeg,image/png,image/webp,image/heic" onChange="{{ pickFiles }}" aria-labelledby="f-files-label" aria-describedby="f-files-status" style="position:absolute;width:1px;height:1px;opacity:0;overflow:hidden">
+                  <p id="f-files-status" aria-live="polite" style="margin:0;font-size:14px;color:#68737D">{{ filesStatus }}</p>
+                  <sc-if value="{{ hasFiles }}" hint-placeholder-val="{{ false }}">
+                    <ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px">
+                      <sc-for list="{{ fileItems }}" as="x" hint-placeholder-count="1">
+                        <li style="display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:center;padding:12px 14px;border-radius:14px;background:#F7F7F5;border:1px solid {{ x.border }}">
+                          <span style="width:40px;height:40px;border-radius:10px;background:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:22px;color:{{ x.iconColor }}"><i class="{{ x.icon }}" aria-hidden="true"></i></span>
+                          <div style="display:flex;flex-direction:column;gap:6px;min-width:0">
+                            <span style="font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:#222D37;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ x.name }} <span style="font-weight:600;color:#68737D">· {{ x.size }}</span></span>
+                            <sc-if value="{{ x.isUp }}" hint-placeholder-val="{{ false }}"><div role="progressbar" aria-label="{{ x.progLabel }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{ x.pct }}" style="height:5px;border-radius:5px;background:#E7EAED;overflow:hidden"><div style="height:5px;width:{{ x.bar }};background:#C87943;transition:width .2s"></div></div></sc-if>
+                            <span style="font-size:14px;line-height:1.4;color:{{ x.statusColor }}">{{ x.statusText }}</span>
+                          </div>
+                          <div style="display:flex;gap:4px">
+                            <sc-if value="{{ x.canRetry }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ x.retry }}" style="min-height:44px;padding:0 14px;border-radius:999px;background:#FFFFFF;border:1px solid rgba(52,65,77,.25);font-family:Manrope,sans-serif;font-weight:700;font-size:13px;color:#222D37;cursor:pointer">Retry</button></sc-if>
+                            <button type="button" onClick="{{ x.remove }}" aria-label="{{ x.removeLabel }}" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:none;border:0;font-size:20px;color:#34414D;cursor:pointer" style-hover="background:#E7EAED"><i class="ph-duotone ph-x" aria-hidden="true"></i></button>
+                          </div>
+                        </li>
+                      </sc-for>
+                    </ul>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:22px">
+                <div class="field" style="display:flex;flex-direction:column;gap:6px">
+                  <label for="f-name" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;margin:0">Full name</label>
+                  <input class="input" id="f-name" autoComplete="name" value="{{ f.name }}" onChange="{{ on.name }}" onBlur="{{ bl.name }}" aria-invalid="{{ inv.name }}" aria-describedby="f-name-err" style="min-height:54px;font-size:16px;padding:10px 16px;background:#F7F7F5;border-radius:12px;border-color:{{ bc.name }}">
+                  <sc-if value="{{ err.name }}" hint-placeholder-val="{{ false }}"><p id="f-name-err" style="margin:0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.name }}</p></sc-if>
+                </div>
+                <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:22px">
+                  <div class="field" style="display:flex;flex-direction:column;gap:6px">
+                    <label for="f-phone" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;margin:0">Phone number</label>
+                    <input class="input" id="f-phone" type="tel" inputMode="tel" autoComplete="tel" value="{{ f.phone }}" onChange="{{ on.phone }}" onBlur="{{ bl.phone }}" aria-invalid="{{ inv.phone }}" aria-describedby="f-phone-help f-phone-err" style="min-height:54px;font-size:16px;padding:10px 16px;background:#F7F7F5;border-radius:12px;border-color:{{ bc.phone }}">
+                    <span id="f-phone-help" style="font-size:14px;color:#68737D">Include the area code.</span>
+                    <sc-if value="{{ err.phone }}" hint-placeholder-val="{{ false }}"><p id="f-phone-err" style="margin:0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.phone }}</p></sc-if>
+                  </div>
+                  <div class="field" style="display:flex;flex-direction:column;gap:6px">
+                    <label for="f-email" style="font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#222D37;margin:0">Email address</label>
+                    <input class="input" id="f-email" type="email" inputMode="email" autoComplete="email" value="{{ f.email }}" onChange="{{ on.email }}" onBlur="{{ bl.email }}" aria-invalid="{{ inv.email }}" aria-describedby="f-email-err" style="min-height:54px;font-size:16px;padding:10px 16px;background:#F7F7F5;border-radius:12px;border-color:{{ bc.email }}">
+                    <sc-if value="{{ err.email }}" hint-placeholder-val="{{ false }}"><p id="f-email-err" style="margin:0;display:flex;gap:6px;font-size:15px;color:#9E2F1E"><i class="ph-duotone ph-warning-circle" aria-hidden="true" style="margin-top:3px"></i>{{ err.email }}</p></sc-if>
+                  </div>
+                </div>
+              </div>
+            </sc-if>
+
+            <sc-if value="{{ isStep4 }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex;flex-direction:column;gap:12px">
+                <sc-for list="{{ reviewGroups }}" as="g" hint-placeholder-count="4">
+                  <div style="border-radius:16px;background:#F7F7F5;padding:18px 20px;display:flex;flex-direction:column;gap:10px">
+                    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><h3 style="margin:0;font-family:Manrope,sans-serif;font-weight:800;font-size:17px;color:#222D37">{{ g.title }}</h3><button type="button" onClick="{{ g.edit }}" aria-label="{{ g.editLabel }}" style="min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(52,65,77,.25);background:#FFFFFF;font-family:Manrope,sans-serif;font-weight:700;font-size:13px;color:#222D37;cursor:pointer" style-hover="border-color:#A95F2D">Edit</button></div>
+                    <dl style="margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:8px 20px"><sc-for list="{{ g.rows }}" as="r" hint-placeholder-count="2"><div><dt style="font-family:Manrope,sans-serif;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#68737D">{{ r.k }}</dt><dd style="margin:2px 0 0;font-size:15px;line-height:1.45;color:#222D37;word-break:break-word">{{ r.v }}</dd></div></sc-for></dl>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+
+          <sc-if value="{{ isError }}" hint-placeholder-val="{{ false }}">
+            <div ref="{{ errorRef }}" tabindex="-1" role="alert" style="outline:none;border-radius:14px;background:#FBEDEA;padding:18px 20px;display:flex;gap:12px">
+              <i class="ph-duotone ph-wifi-slash" aria-hidden="true" style="font-size:24px;color:#9E2F1E;flex:none"></i>
+              <div style="display:flex;flex-direction:column;gap:4px"><strong style="font-family:Manrope,sans-serif;font-size:16px;color:#7A2416">Your request was not sent.</strong><span style="font-size:15px;line-height:1.5;color:#4A5560">Something went wrong (simulated). Everything you entered is still here — try again, or call +1 (410) 776-6528.</span></div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ uploadWait }}" hint-placeholder-val="{{ false }}"><p role="status" style="margin:0;font-size:15px;color:#34414D">Photos are still attaching — the request can be sent once they finish.</p></sc-if>
+
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-top:22px;border-top:1px solid rgba(52,65,77,.12)">
+            <sc-if value="{{ canBack }}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{ back }}" disabled="{{ busyBool }}" class="btn" style="min-height:54px;padding:0 22px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;border:1px solid rgba(52,65,77,.3);color:#222D37;background:transparent;gap:8px"><i class="ph-duotone ph-arrow-left" aria-hidden="true"></i>Back</button></sc-if>
+            <sc-if value="{{ noBack }}" hint-placeholder-val="{{ true }}"><span></span></sc-if>
+            <button type="submit" class="btn btn-primary" disabled="{{ busyBool }}" aria-disabled="{{ busy }}" style="min-height:56px;padding:0 10px 0 26px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:800;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">{{ nextLabel }}<span style="width:38px;height:38px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="{{ nextIcon }}" aria-hidden="true" style="animation:{{ spinAnim }}"></i></span></button>
+          </div>
+        </form>
+      </sc-if>
+    </div>
+  </div>
+</sc-if>
+
+</main>
+
+<footer style="background:#222D37;color:#D5DBE0;margin-top:auto;overflow:hidden">
+  <div style="max-width:1320px;margin:0 auto;padding:clamp(64px,8vw,104px) clamp(20px,4vw,56px) 0">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:24px;padding-bottom:clamp(40px,5vw,64px);border-bottom:1px solid rgba(255,255,255,.12)">
+      <p style="margin:0;font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(30px,4vw,60px);line-height:1;letter-spacing:-.04em;color:#FFFFFF;max-width:14ch">Let’s talk about your home.</p>
+      <a class="btn btn-primary" href="#/estimate" style="min-height:58px;padding:0 10px 0 28px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;gap:14px;transition:gap .25s" style-hover="gap:20px">Get an Estimate<span style="width:40px;height:40px;border-radius:50%;background:#FFFFFF;color:#A95F2D;display:flex;align-items:center;justify-content:center"><i class="ph-duotone ph-arrow-up-right" aria-hidden="true"></i></span></a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:36px;padding:clamp(40px,5vw,56px) 0">
+      <nav aria-label="Footer pages" style="display:flex;flex-direction:column;gap:12px"><span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B9C2CA">Pages</span><a href="#/" style="color:#FFFFFF;text-decoration:none;font-size:16px" style-hover="color:#E9B48C">Home</a><a href="#/projects" style="color:#FFFFFF;text-decoration:none;font-size:16px" style-hover="color:#E9B48C">Projects</a><a href="#/about" style="color:#FFFFFF;text-decoration:none;font-size:16px" style-hover="color:#E9B48C">About &amp; FAQs</a><a href="#/estimate" style="color:#FFFFFF;text-decoration:none;font-size:16px" style-hover="color:#E9B48C">Request an Estimate</a></nav>
+      <nav aria-label="Footer services" style="display:flex;flex-direction:column;gap:12px"><span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B9C2CA">Services</span><a href="#/roofing" style="color:#FFFFFF;text-decoration:none;font-size:16px" style-hover="color:#E9B48C">Roofing</a><a href="#/remodeling" style="color:#FFFFFF;text-decoration:none;font-size:16px" style-hover="color:#E9B48C">Remodeling</a></nav>
+      <div style="display:flex;flex-direction:column;gap:12px"><span style="font-family:Manrope,sans-serif;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#B9C2CA">Contact</span><a href="tel:+14107766528" style="color:#FFFFFF;font-size:16px" style-hover="color:#E9B48C">+1 (410) 776-6528</a><a href="mailto:paxton.doyle@yahoo.com" style="color:#FFFFFF;font-size:16px;word-break:break-word" style-hover="color:#E9B48C">paxton.doyle@yahoo.com</a><a href="https://www.google.com/maps/search/?api=1&amp;query=1100+Congress+St+Houston+TX+77002" target="_blank" rel="noopener" style="color:#FFFFFF;font-size:16px;line-height:1.5" style-hover="color:#E9B48C">1100 Congress St, Houston, TX 77002</a></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between;font-size:14px;color:#B9C2CA;padding-bottom:16px"><span>© 2026 Doyle Roofing &amp; Remodeling</span><sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><span>Prototype — illustrative imagery and draft content pending client approval.</span></sc-if></div>
+  </div>
+  <div aria-hidden="true" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(90px,25vw,380px);line-height:.78;letter-spacing:-.06em;color:#2B3742;text-align:center;white-space:nowrap;margin-bottom:-.06em;user-select:none">DOYLE</div>
+</footer>
+
+<sc-if value="{{ showStickyCta }}" hint-placeholder-val="{{ false }}">
+  <div style="position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:45">
+    <a class="btn btn-primary" href="#/estimate" style="width:100%;min-height:54px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:16px;color:#FFFFFF;box-shadow:0 10px 30px rgba(34,45,55,.3)">Get an Estimate</a>
+  </div>
+</sc-if>
+
+<sc-if value="{{ lbOpen }}" hint-placeholder-val="{{ false }}">
+  <div onClick="{{ lbBackdrop }}" style="position:fixed;inset:0;z-index:95;background:rgba(18,24,30,.94);display:flex;align-items:center;justify-content:center;padding:clamp(0px,3vw,40px)">
+    <div ref="{{ lbRef }}" role="dialog" aria-modal="true" aria-labelledby="lb-title" onKeyDown="{{ lbKey }}" onClick="{{ stop }}" style="width:100%;max-width:1240px;max-height:100%;overflow:auto;border-radius:24px;background:#F7F7F5;display:grid;grid-template-columns:{{ L.lb }}">
+      <div style="position:relative;min-height:clamp(280px,60vh,700px);background:#E7EAED"><image-slot id="{{ lb.slot }}" shape="rect" placeholder="Illustrative placeholder — drop an approved project photograph"></image-slot></div>
+      <div style="padding:clamp(22px,3vw,36px);display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-family:Manrope,sans-serif;font-size:13px;font-weight:700;color:#68737D">{{ lbCount }}</span><button ref="{{ lbCloseRef }}" onClick="{{ lbClose }}" aria-label="Close project details" style="width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#FFFFFF;border:1px solid rgba(52,65,77,.2);font-size:20px;color:#222D37;cursor:pointer" style-hover="background:#E7EAED"><i class="ph-duotone ph-x" aria-hidden="true"></i></button></div>
+        <span style="display:flex;gap:8px;flex-wrap:wrap"><span style="padding:5px 11px;border-radius:999px;background:#F5E9DF;color:#6A3A1B;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">{{ lb.cat }}</span><span style="padding:5px 11px;border-radius:999px;border:1px dashed #68737D;color:#4A5560;font-family:Manrope,sans-serif;font-weight:700;font-size:12px">Sample entry</span></span>
+        <h2 id="lb-title" style="font-family:Manrope,sans-serif;font-weight:800;font-size:clamp(26px,2.6vw,36px);letter-spacing:-.03em;line-height:1.05;margin:0;color:#222D37">{{ lb.title }}</h2>
+        <p style="margin:0;font-size:17px;line-height:1.6;color:#4A5560">{{ lb.desc }}</p>
+        <sc-if value="{{ flags }}" hint-placeholder-val="{{ true }}"><p style="margin:0;font-size:14px;line-height:1.5;color:#68737D">A before-and-after comparison appears only when a genuine, matching image pair is supplied.</p></sc-if>
+        <a class="btn btn-primary" href="{{ lbCtaHref }}" style="align-self:flex-start;min-height:50px;padding:0 22px;border-radius:999px;font-family:Manrope,sans-serif;font-weight:700;font-size:15px;color:#FFFFFF">Request a similar estimate</a>
+        <sc-if value="{{ lbMany }}" hint-placeholder-val="{{ true }}">
+          <div style="margin-top:auto;display:flex;gap:8px;padding-top:12px">
+            <button onClick="{{ lbPrev }}" aria-label="Previous project" style="flex:1;min-height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;background:#FFFFFF;border:1px solid rgba(52,65,77,.2);font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:#222D37;cursor:pointer" style-hover="border-color:#A95F2D"><i class="ph-duotone ph-arrow-left" aria-hidden="true"></i>Previous</button>
+            <button onClick="{{ lbNext }}" aria-label="Next project" style="flex:1;min-height:50px;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:8px;background:#FFFFFF;border:1px solid rgba(52,65,77,.2);font-family:Manrope,sans-serif;font-weight:700;font-size:14px;color:#222D37;cursor:pointer" style-hover="border-color:#A95F2D">Next<i class="ph-duotone ph-arrow-right" aria-hidden="true"></i></button>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </div>
+</sc-if>
+
+</div>
+      
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showReviewFlags&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;galleryDataset&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Sample entries&quot;,&quot;No published projects&quot;],&quot;default&quot;:&quot;Sample entries&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;},&quot;submitOutcome&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Succeeds&quot;,&quot;Fails first attempt&quot;,&quot;Always fails&quot;],&quot;default&quot;:&quot;Succeeds&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;}}">
+const PAGES = ['home','roofing','remodeling','projects','about','estimate'];
+const NAV = [['Home','home'],['Roofing','roofing'],['Remodeling','remodeling'],['Projects','projects'],['About & FAQs','about']];
+const SAMPLE = 'Sample entry showing how an approved project will be presented: photographs, a short verified description and the project category. Replace with real client-approved content before launch.';
+const PROJECTS = [
+  {cat:'Roofing',title:'Roof replacement',slot:'proj-roof-1'},
+  {cat:'Remodeling',title:'Kitchen remodel',slot:'proj-remodel-1'},
+  {cat:'Roofing',title:'Roof repair',slot:'proj-roof-2'},
+  {cat:'Remodeling',title:'Bathroom renovation',slot:'proj-remodel-2'},
+  {cat:'Roofing',title:'Roofline and exterior detail',slot:'proj-roof-3'},
+  {cat:'Remodeling',title:'Exterior update',slot:'proj-remodel-3'}
+].map((p, i) => ({...p, id: 'p' + i, desc: SAMPLE}));
+const ROOF_SVC = [
+  {name:'Roof repair',need:'For leaks, missing or damaged shingles and other problems that need attention before they spread.',slot:'svc-roof-repair'},
+  {name:'Roof replacement',need:'For roofs that are worn, ageing or no longer worth repairing piece by piece.',slot:'svc-roof-replace'},
+  {name:'Roof inspection',need:'For a clear picture of a roof’s condition — before buying, selling or planning other work.',slot:'svc-roof-inspect'},
+  {name:'Roof maintenance',need:'For keeping an existing roof in good working order over time.',slot:'svc-roof-maint'}
+];
+const REM_SVC = [
+  {name:'Kitchen remodeling',need:'Layout, storage, surfaces and fixtures — for kitchens that no longer work the way you need them to.',slot:'svc-rem-kitchen'},
+  {name:'Bathroom renovation',need:'From updated fixtures and finishes to a full reconfiguration of the room.',slot:'svc-rem-bath'},
+  {name:'Interior improvements',need:'Living spaces, flooring, walls and finishes reworked for comfort and everyday function.',slot:'svc-rem-interior'},
+  {name:'Exterior remodeling',need:'Updates to the outside of the home, below the roofline.',slot:'svc-rem-exterior'}
+];
+const FAQ = {
+  roof: [
+    {id:'rf1',q:'How do I know whether my roof needs repair or replacement?',a:'It depends on the roof’s age, condition and the extent of any damage, and usually needs someone to look at it in person. Describe what you are seeing in the estimate form — photos help — and the next step can be discussed from there.'},
+    {id:'rf2',q:'What information helps with a roofing estimate?',a:'The property address, roughly how old the roof is (if you know), what you have noticed and when, and a few photos of any problem areas taken safely from the ground or from inside.'},
+    {id:'rf3',q:'Can I request an estimate if I am not sure what the problem is?',a:'Yes. Choose “Not sure” where it applies and describe what you have noticed — a stain on a ceiling, a missing shingle, a recent storm.'}
+  ],
+  rem: [
+    {id:'mf1',q:'What should I include in a remodeling enquiry?',a:'Which rooms or areas you are thinking about, what is not working today, what you would like to change and any inspiration images you have collected.'},
+    {id:'mf2',q:'Do I need finished plans before I get in touch?',a:'No. Choose “Flexible / still planning” as your timeline and describe your ideas as they stand.'},
+    {id:'mf3',q:'Can I send inspiration photos?',a:'Yes — the estimate form accepts up to five photos, including inspiration images as well as photos of the current space.'}
+  ],
+  gen: [
+    {id:'gf1',q:'How do I request an estimate?',a:'Use the Request an Estimate form, call +1 (410) 776-6528 or email paxton.doyle@yahoo.com.'},
+    {id:'gf2',q:'What kinds of projects do you take on?',a:'Doyle Roofing & Remodeling works on roofing and home remodeling projects. The specific services offered are being confirmed — describe your project and you will hear whether it is a fit.'},
+    {id:'gf3',q:'Do I need to know my budget?',a:'No. Choose “Not sure yet / prefer to discuss.” Budget ranges only help prepare for the conversation; they are not a quote.'},
+    {id:'gf4',q:'Which areas do you serve?',a:'The service area is still to be confirmed. The business is based at 1100 Congress St, Houston, TX 77002 — include your property location in the form.'},
+    {id:'gf5',q:'What happens after I send a request?',a:'The details you share are reviewed and you will be contacted using the phone number or email you provide to discuss next steps.'}
+  ]
+};
+const STEPS = [
+  {n:'01',t:'Enquiry',d:'You share the details of your project through the form, by phone or by email.'},
+  {n:'02',t:'Conversation',d:'Your request is reviewed and followed up to clarify scope, timing and priorities.'},
+  {n:'03',t:'Assessment',d:'Where needed, the property is looked at in person to understand the work properly.'},
+  {n:'04',t:'Estimate',d:'You receive an estimate to review before deciding how to proceed.'}
+];
+const STATEMENT = 'Doyle Roofing & Remodeling works on roofing and home remodeling projects for homeowners and property owners — led by Paxton Doyle from 1100 Congress St, Houston.';
+const BUDGETS = ['Under $10,000','$10,000 – $25,000','$25,000 – $50,000','$50,000 +','Not sure yet / prefer to discuss'];
+const TIMELINES = ['As soon as possible','Within 1 month','Within 1–3 months','Within 3–6 months','Flexible / still planning'];
+const PROPS = [['Single-family home','ph-duotone ph-house-line'],['Townhouse','ph-duotone ph-buildings'],['Multi-family property','ph-duotone ph-building-apartment'],['Other','ph-duotone ph-dots-three-circle']];
+const ROOF_ISSUES = ['Active leak','Storm or wind damage','Worn or ageing roof','Planning ahead','Not sure'];
+const AREAS = ['Kitchen','Bathroom','Interior living spaces','Exterior','Other'];
+const W_STEPS = [
+  {label:'Project',title:'What kind of project is it?',intro:'Choose one — you can add detail on the next steps.',fields:['type']},
+  {label:'Property & timing',title:'Where, when and roughly how much?',intro:'Tell us about the property and your plans.',fields:['property','location','timeline','budget']},
+  {label:'Details & photos',title:'Describe the work.',intro:'A few sentences is plenty. Photos are optional but helpful.',fields:['desc']},
+  {label:'Your details',title:'How can we reach you?',intro:'Used only to respond to this enquiry.',fields:['name','phone','email']},
+  {label:'Review & send',title:'Review your request.',intro:'Check everything looks right, then send.',fields:[]}
+];
+const FOCUS = {type:'f-type-roofing',property:'f-prop-0',location:'f-location',timeline:'f-time-0',budget:'f-budget-0',desc:'f-desc',name:'f-name',phone:'f-phone',email:'f-email'};
+const STEP_OF = {type:0,property:1,location:1,timeline:1,budget:1,desc:2,name:3,phone:3,email:3};
+const ORDER = ['type','property','location','timeline','budget','desc','name','phone','email'];
+const OK_EXT = /\.(jpe?g|png|webp|heic|heif)$/i;
+const OK_TYPES = ['image/jpeg','image/png','image/webp','image/heic','image/heif'];
+const MAX_BYTES = 10 * 1024 * 1024, MAX_FILES = 5;
+const EMPTY = {name:'',phone:'',email:'',type:'',property:'',location:'',budget:'',timeline:'',desc:'',roofIssues:[],roofAge:'',areas:[]};
+const EASE = 'cubic-bezier(.2,.7,.2,1)';
+
+function parseHash() {
+  const h = (window.location.hash || '').replace(/^#\/?/, '');
+  const [p, qs] = h.split('?');
+  const params = new URLSearchParams(qs || '');
+  return { page: PAGES.includes(p) ? p : 'home', type: params.get('type'), cat: params.get('cat') };
+}
+function fmtSize(b) { return b >= 1048576 ? (b / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(b / 1024)) + ' KB'; }
+
+class Component extends DCLogic {
+  mainRef = React.createRef(); lbRef = React.createRef(); lbCloseRef = React.createRef();
+  summaryRef = React.createRef(); errorRef = React.createRef(); successRef = React.createRef();
+  menuBtnRef = React.createRef(); menuRef = React.createRef(); menuCloseRef = React.createRef();
+  formTopRef = React.createRef(); progressRef = React.createRef(); railRef = React.createRef(); chipRef = React.createRef();
+  statementRef = React.createRef(); stepBodyRef = React.createRef(); stepHeadRef = React.createRef(); galleryRef = React.createRef();
+  timers = [];
+  state = { route: parseHash(), w: window.innerWidth, menu: false, scrolled: false, overHero: true, filter: 'All', lb: null, faq: {},
+    heroMode: 'roofing', hover: null, svc: 0, remTab: 0, proc: 0,
+    f: {...EMPTY}, touched: {}, tried: {}, submitted: false, step: 0, maxStep: 0, files: [], drag: false, status: 'idle', attempts: 0, ref: '', uploadWait: false, filesMsg: '' };
+
+  componentDidMount() {
+    this.rm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.onHash = () => this.applyRoute(true);
+    this.onResize = () => this.setState({ w: window.innerWidth });
+    this.onScroll = () => { if (!this.raf) this.raf = requestAnimationFrame(() => { this.raf = 0; this.tick(); }); };
+    this.onKey = e => { if (e.key === 'Escape') { if (this.state.lb) this.closeLb(); else if (this.state.menu) this.closeMenu(); } };
+    window.addEventListener('hashchange', this.onHash);
+    window.addEventListener('resize', this.onResize);
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    document.addEventListener('keydown', this.onKey);
+    this.applyRoute(false);
+    this.afterPage();
+  }
+  componentWillUnmount() {
+    window.removeEventListener('hashchange', this.onHash);
+    window.removeEventListener('resize', this.onResize);
+    window.removeEventListener('scroll', this.onScroll);
+    document.removeEventListener('keydown', this.onKey);
+    this.timers.forEach(clearInterval);
+    this.io && this.io.disconnect(); this.pio && this.pio.disconnect();
+    document.body.style.overflow = '';
+  }
+  componentDidUpdate(pp, ps) {
+    if (ps.route.page !== this.state.route.page) this.afterPage();
+    document.body.style.overflow = (this.state.lb || this.state.menu) ? 'hidden' : '';
+    if (this.state.menu && this.state.w >= 1000) this.setState({ menu: false });
+    if (this.state.menu && !ps.menu) {
+      this.menuCloseRef.current && this.menuCloseRef.current.focus();
+      if (!this.rm) document.querySelectorAll('[data-menu-item]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'translateY(24px)' }, { opacity: 1, transform: 'none' }], { duration: 500, delay: 60 + i * 55, easing: EASE, fill: 'backwards' }));
+    }
+  }
+  tick() {
+    const y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+    if (this.progressRef.current) this.progressRef.current.style.transform = 'scaleX(' + (h > 0 ? Math.min(1, y / h) : 0) + ')';
+    const scrolled = y > 12, overHero = y < Math.max(300, window.innerHeight * 0.7) - 80;
+    if (scrolled !== this.state.scrolled || overHero !== this.state.overHero) this.setState({ scrolled, overHero });
+    const st = this.statementRef.current;
+    if (st && !this.rm) {
+      const r = st.getBoundingClientRect(), vh = window.innerHeight;
+      const p = Math.max(0, Math.min(1, (vh * 0.9 - r.top) / (r.height + vh * 0.4)));
+      const words = st.querySelectorAll('[data-w]'), n = words.length;
+      words.forEach((el, i) => { el.style.opacity = i / n < p ? '1' : '0.18'; });
+    }
+  }
+  applyRoute(nav) {
+    const r = parseHash();
+    const patch = { route: r, menu: false, lb: null };
+    if (r.type === 'roofing' || r.type === 'remodeling') patch.f = { ...this.state.f, type: r.type };
+    if (r.page === 'projects') patch.filter = r.cat === 'roofing' ? 'Roofing' : r.cat === 'remodeling' ? 'Remodeling' : 'All';
+    this.setState(patch, () => {
+      if (!nav) return;
+      window.scrollTo(0, 0);
+      this.mainRef.current && this.mainRef.current.focus({ preventScroll: true });
+    });
+  }
+  afterPage() {
+    setTimeout(() => {
+      this.tick();
+      if (!this.rm) {
+        document.querySelectorAll('[data-rise]').forEach((el, i) => el.animate && el.animate([{ opacity: 0, transform: 'translateY(105%)' }, { opacity: 1, transform: 'none' }], { duration: 900, delay: 80 + i * 90, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards' }));
+      }
+      this.setupReveal(); this.setupProcess();
+    }, 30);
+  }
+  setupReveal() {
+    if (this.rm || !('IntersectionObserver' in window)) return;
+    this.io && this.io.disconnect();
+    this.io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      if (el.hasAttribute('data-reveal-img')) el.animate([{ clipPath: 'inset(18% 8% 18% 8% round 24px)', transform: 'scale(1.04)' }, { clipPath: 'inset(0% 0% 0% 0% round 24px)', transform: 'none' }], { duration: 1100, easing: 'cubic-bezier(.16,1,.3,1)' });
+      else el.animate([{ opacity: 0, transform: 'translateY(32px)' }, { opacity: 1, transform: 'none' }], { duration: 750, easing: 'cubic-bezier(.16,1,.3,1)' });
+      this.io.unobserve(el);
+    }), { threshold: 0.12 });
+    document.querySelectorAll('[data-reveal],[data-reveal-img]').forEach(el => { if (el.getBoundingClientRect().top > window.innerHeight * 0.92) this.io.observe(el); });
+  }
+  setupProcess() {
+    this.pio && this.pio.disconnect();
+    if (!('IntersectionObserver' in window)) return;
+    this.pio = new IntersectionObserver(es => es.forEach(en => { if (en.isIntersecting) this.setState({ proc: +en.target.getAttribute('data-step') }); }), { rootMargin: '-45% 0px -45% 0px' });
+    document.querySelectorAll('[data-step]').forEach(el => this.pio.observe(el));
+  }
+  closeMenu() { this.setState({ menu: false }, () => this.menuBtnRef.current && this.menuBtnRef.current.focus()); }
+  scrollToId(id) { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: this.rm ? 'auto' : 'smooth' }); }
+  trap(e, root) {
+    if (e.key !== 'Tab' || !root) return;
+    const els = Array.from(root.querySelectorAll('button, a[href]')).filter(x => !x.disabled);
+    if (!els.length) return;
+    const first = els[0], last = els[els.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+
+  published() { return (this.props.galleryDataset ?? 'Sample entries') === 'No published projects' ? [] : PROJECTS; }
+  listFor(name) {
+    const pub = this.published();
+    if (name === 'gallery') return this.state.filter === 'All' ? pub : pub.filter(p => p.cat === this.state.filter);
+    if (name === 'roofing') return pub.filter(p => p.cat === 'Roofing');
+    if (name === 'remodeling') return pub.filter(p => p.cat === 'Remodeling');
+    return pub;
+  }
+  decorate(list, name) {
+    const hv = this.state.hover;
+    return list.map((p, i) => {
+      const key = name + p.id, on = hv === key;
+      return { ...p, open: () => { if (!this.dragged) this.openLb(name, i); }, openLabel: 'View details: ' + p.title + ' (sample entry)',
+        hoverIn: () => this.setState({ hover: key }), hoverOut: () => this.setState({ hover: null }),
+        scale: on ? 'scale(1.06)' : 'none', arrow: on ? 'rotate(45deg)' : 'none' };
+    });
+  }
+  openLb(list, i) { this.lastFocus = document.activeElement; this.setState({ lb: { list, i } }, () => this.lbCloseRef.current && this.lbCloseRef.current.focus()); }
+  closeLb() { this.setState({ lb: null }, () => { if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus(); }); }
+  stepLb(d) { this.setState(s => { const n = this.listFor(s.lb.list).length; return { lb: { ...s.lb, i: (s.lb.i + d + n) % n } }; }); }
+
+  validate(f) {
+    const e = {};
+    if (!f.type) e.type = 'Choose Roofing or Remodeling.';
+    if (!f.property) e.property = 'Select a property type.';
+    if (!f.location.trim()) e.location = 'Enter the property address, or city and ZIP code.';
+    if (!f.timeline) e.timeline = 'Choose a preferred timeline.';
+    if (!f.budget) e.budget = 'Choose a budget range, or “Not sure yet”.';
+    if (f.desc.trim().length < 20) e.desc = f.desc.trim() ? 'Add a little more detail — at least 20 characters.' : 'Describe the project in a sentence or two.';
+    if (!f.name.trim()) e.name = 'Enter your full name.';
+    const digits = f.phone.replace(/\D/g, '');
+    if (!f.phone.trim()) e.phone = 'Enter a phone number so we can reach you.';
+    else if (/[^\d\s()+.\-]/.test(f.phone) || digits.length < 10 || digits.length > 11) e.phone = 'Enter a valid phone number with area code, e.g. (713) 555-0142.';
+    if (!f.email.trim()) e.email = 'Enter your email address.';
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.trim())) e.email = 'Enter an email address in the format name@example.com.';
+    return e;
+  }
+  setF(k, v) { this.setState(s => ({ f: { ...s.f, [k]: v } })); }
+  toggleArr(k, v) { this.setState(s => { const a = s.f[k]; return { f: { ...s.f, [k]: a.includes(v) ? a.filter(x => x !== v) : [...a, v] } }; }); }
+  focusField(id) { const el = document.getElementById(id); if (el) { window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 160 }); el.focus({ preventScroll: true }); } }
+  goStep(i) {
+    const dir = i > this.state.step ? 1 : -1;
+    this.setState(s => ({ step: i, maxStep: Math.max(s.maxStep, i) }), () => {
+      const b = this.stepBodyRef.current;
+      if (b && !this.rm) b.animate([{ opacity: 0, transform: 'translateX(' + (dir * 36) + 'px)' }, { opacity: 1, transform: 'none' }], { duration: 450, easing: 'cubic-bezier(.16,1,.3,1)' });
+      const t = this.formTopRef.current;
+      if (t && t.getBoundingClientRect().top < 80) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 100 });
+      this.stepHeadRef.current && this.stepHeadRef.current.focus({ preventScroll: true });
+    });
+  }
+  next() {
+    const s = this.state, errs = this.validate(s.f);
+    const bad = W_STEPS[s.step].fields.filter(k => errs[k]);
+    if (bad.length) { this.setState({ tried: { ...s.tried, [s.step]: true } }, () => this.summaryRef.current && this.summaryRef.current.focus()); return; }
+    this.goStep(s.step + 1);
+  }
+  submit() {
+    const s = this.state;
+    if (s.status === 'submitting') return;
+    const errs = this.validate(s.f), firstBad = ORDER.find(k => errs[k]);
+    if (firstBad) { const st = STEP_OF[firstBad]; this.setState({ tried: { ...s.tried, [st]: true } }, () => this.goStep(st)); return; }
+    if (s.files.some(x => x.status === 'uploading')) { this.setState({ uploadWait: true }); return; }
+    const attempt = s.attempts + 1;
+    this.setState({ status: 'submitting', submitted: true, uploadWait: false });
+    setTimeout(() => {
+      const mode = this.props.submitOutcome ?? 'Succeeds';
+      const fail = mode === 'Always fails' || (mode === 'Fails first attempt' && attempt === 1);
+      if (fail) this.setState({ status: 'error', attempts: attempt }, () => this.errorRef.current && this.errorRef.current.focus());
+      else this.setState({ status: 'success', attempts: attempt, ref: 'DRR-' + Math.random().toString(36).slice(2, 7).toUpperCase() }, () => {
+        const t = this.formTopRef.current; if (t) window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 110 });
+        this.successRef.current && this.successRef.current.focus({ preventScroll: true });
+      });
+    }, 1600);
+  }
+  resetForm = () => { this.timers.forEach(clearInterval); this.timers = []; this.setState({ f: { ...EMPTY }, touched: {}, tried: {}, submitted: false, step: 0, maxStep: 0, files: [], status: 'idle', attempts: 0, ref: '', uploadWait: false, filesMsg: '' }); };
+
+  addFiles(list) {
+    const files = [...this.state.files], msgs = [];
+    for (const file of Array.from(list || [])) {
+      const id = Math.random().toString(36).slice(2);
+      const okType = OK_TYPES.includes(file.type) || OK_EXT.test(file.name);
+      const count = files.filter(x => x.status !== 'invalid').length;
+      let error = '';
+      if (!okType) error = 'Not a supported file type. Use JPG, PNG, WEBP or HEIC.';
+      else if (file.size > MAX_BYTES) error = 'This photo is ' + fmtSize(file.size) + ' — the limit is 10 MB.';
+      else if (count >= MAX_FILES) error = 'Only 5 photos can be attached. Remove one to add this.';
+      files.push({ id, name: file.name, size: fmtSize(file.size), status: error ? 'invalid' : 'uploading', progress: 0, error, failOnce: /fail/i.test(file.name) });
+      msgs.push(error ? file.name + ' was not added. ' + error : file.name + ' is attaching.');
+      if (!error) this.simulate(id);
+    }
+    this.setState({ files, filesMsg: msgs.join(' ') });
+  }
+  simulate(id) {
+    const t = setInterval(() => {
+      const x = this.state.files.find(f => f.id === id);
+      if (!x || x.status !== 'uploading') { clearInterval(t); return; }
+      const p = Math.min(100, x.progress + 14 + Math.random() * 22);
+      let patch = { progress: p };
+      if (x.failOnce && p > 55) { patch = { status: 'failed', failOnce: false, error: 'Could not attach — connection interrupted (simulated).' }; clearInterval(t); }
+      else if (p >= 100) { patch = { progress: 100, status: 'ready' }; clearInterval(t); }
+      this.setState(s => ({ files: s.files.map(f => f.id === id ? { ...f, ...patch } : f), filesMsg: patch.status === 'ready' ? x.name + ' attached.' : patch.status === 'failed' ? x.name + ' failed to attach.' : s.filesMsg }));
+    }, 240);
+    this.timers.push(t);
+  }
+
+  faqList(arr) {
+    return arr.map(q => {
+      const open = !!this.state.faq[q.id];
+      return { ...q, btnId: q.id + '-b', panelId: q.id + '-p', expanded: open ? 'true' : 'false', rows: open ? '1fr' : '0fr', vis: open ? 'visible' : 'hidden',
+        rot: open ? 'rotate(45deg)' : 'none', bg: open ? '#FFFFFF' : '#EFEFEC', iconBg: open ? '#A95F2D' : '#FFFFFF', iconInk: open ? '#FFFFFF' : '#222D37',
+        toggle: () => this.setState(s => ({ faq: { ...s.faq, [q.id]: !s.faq[q.id] } })) };
+    });
+  }
+
+  renderVals() {
+    const s = this.state, w = s.w, page = s.route.page, f = s.f;
+    const d = w >= 1000, mid = w >= 860;
+    const flags = this.props.showReviewFlags ?? true;
+    const busy = s.status === 'submitting', done = s.status === 'success';
+    const L = {
+      heroGrid: d ? 'minmax(0,1fr) 400px' : '1fr',
+      split: mid ? 'minmax(0,1fr) minmax(0,1fr)' : '1fr',
+      feat: mid ? 'minmax(0,7fr) minmax(0,5fr)' : '1fr',
+      faq: mid ? 'minmax(0,4fr) minmax(0,8fr)' : '1fr',
+      est: d ? 'minmax(0,4fr) minmax(0,8fr)' : '1fr',
+      explorer: d ? 'minmax(0,5fr) minmax(0,7fr)' : '1fr',
+      sticky: d ? 'sticky' : 'static',
+      lb: mid ? 'minmax(0,1.7fr) minmax(0,1fr)' : '1fr',
+      tileH: mid ? '600px' : '480px',
+      stepH: mid ? '44vh' : 'auto',
+      panelDir: mid ? 'row' : 'column', panelH: mid ? '560px' : 'auto',
+      collapsedDir: mid ? 'column' : 'row', collapsedAlign: mid ? 'flex-start' : 'center',
+      writing: mid ? 'vertical-rl' : 'horizontal-tb', rotate: mid ? 'rotate(180deg)' : 'none',
+      bento: mid ? 'repeat(3,minmax(0,1fr))' : w >= 600 ? 'repeat(2,minmax(0,1fr))' : '1fr',
+      autoRows: mid ? '300px' : '360px',
+      stepperDir: d ? 'column' : 'row', stepperFlex: d ? 'none' : '1 1 140px'
+    };
+    const onDark = (page === 'home' || page === 'roofing') && s.overHero && !s.menu;
+    const nav = NAV.map(([label, key], i) => {
+      const cur = page === key;
+      return { label, num: '0' + (i + 1), href: key === 'home' ? '#/' : '#/' + key, current: cur ? 'page' : undefined,
+        color: cur ? (onDark ? '#222D37' : '#FFFFFF') : (onDark ? '#FFFFFF' : '#34414D'), bg: cur ? (onDark ? '#FFFFFF' : '#222D37') : 'transparent' };
+    });
+
+    const pub = this.published();
+    const railItems = this.decorate(this.listFor('featured'), 'featured');
+    const gallery = this.decorate(this.listFor('gallery'), 'gallery').map((p, i) => {
+      const big = mid && i % 6 === 0, tall = mid && i % 6 === 3;
+      return { ...p, col: big && w >= 600 ? 'span 2' : 'span 1', row: big || tall ? 'span 2' : 'span 1', titleSize: big ? 'clamp(28px,3vw,40px)' : '22px' };
+    });
+    const roofProjects = this.decorate(this.listFor('roofing'), 'roofing');
+    const remProjects = this.decorate(this.listFor('remodeling'), 'remodeling');
+    const filters = ['All', 'Roofing', 'Remodeling'].map(c => {
+      const on = s.filter === c;
+      return { label: c, count: c === 'All' ? pub.length : pub.filter(p => p.cat === c).length, pressed: on ? 'true' : 'false',
+        bg: on ? '#222D37' : 'transparent', color: on ? '#FFFFFF' : '#222D37', countBg: on ? 'rgba(255,255,255,.18)' : '#EFEFEC',
+        onClick: () => { this.setState({ filter: c }); const g = this.galleryRef.current; if (g && !this.rm) g.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }], { duration: 500, easing: EASE }); } };
+    });
+
+    let lb = null, lbList = [];
+    if (s.lb) { lbList = this.listFor(s.lb.list); lb = lbList[s.lb.i] || null; }
+
+    const all = this.validate(f);
+    const err = {}, inv = {}, bc = {}, on = {}, bl = {};
+    ORDER.forEach(k => {
+      const m = (s.submitted || s.touched[k] || s.tried[STEP_OF[k]]) ? (all[k] || '') : '';
+      err[k] = m; inv[k] = m ? 'true' : 'false'; bc[k] = m ? '#9E2F1E' : 'rgba(52,65,77,.2)';
+      bl[k] = () => this.setState(st => ({ touched: { ...st.touched, [k]: true } }));
+    });
+    ['name','phone','email','location','desc','roofAge'].forEach(k => { on[k] = e => this.setF(k, e.target.value); });
+    const stepFields = W_STEPS[s.step].fields;
+    const summaryItems = stepFields.filter(k => all[k]).map(k => ({ msg: all[k], go: () => this.focusField(FOCUS[k]) }));
+    const stepValid = i => W_STEPS[i].fields.every(k => !all[k]);
+
+    const pill = (k, label, id) => { const c = f[k] === label; return { label, id, checked: c, bg: c ? '#222D37' : '#FFFFFF', ink: c ? '#FFFFFF' : '#222D37', border: c ? '#222D37' : (err[k] ? '#9E2F1E' : 'rgba(52,65,77,.22)'), onChange: () => this.setF(k, label) }; };
+    const chip = (k, arr) => arr.map(label => { const c = f[k].includes(label); return { label, checked: c, bg: c ? '#222D37' : '#FFFFFF', color: c ? '#FFFFFF' : '#222D37', border: c ? '#222D37' : 'rgba(52,65,77,.22)', onChange: () => this.toggleArr(k, label) }; });
+
+    const readyCount = s.files.filter(x => x.status === 'ready').length;
+    const fileItems = s.files.map(x => {
+      const up = x.status === 'uploading', ok = x.status === 'ready', bad = x.status === 'invalid' || x.status === 'failed';
+      const pct = Math.round(x.progress);
+      return { ...x, isUp: up, pct, bar: pct + '%', progLabel: 'Attaching ' + x.name,
+        icon: ok ? 'ph-duotone ph-check-circle' : bad ? 'ph-duotone ph-warning-circle' : 'ph-duotone ph-image',
+        iconColor: ok ? '#2F6B3F' : bad ? '#9E2F1E' : '#34414D', border: bad ? '#E7B9AF' : 'transparent',
+        statusText: up ? 'Attaching… ' + pct + '%' : ok ? 'Ready — kept in this browser only (prototype)' : x.error,
+        statusColor: bad ? '#9E2F1E' : ok ? '#2F6B3F' : '#4A5560',
+        canRetry: x.status === 'failed', removeLabel: 'Remove ' + x.name,
+        retry: () => this.setState(st => ({ files: st.files.map(y => y.id === x.id ? { ...y, status: 'uploading', progress: 0, error: '' } : y) }), () => this.simulate(x.id)),
+        remove: () => this.setState(st => ({ files: st.files.filter(y => y.id !== x.id), filesMsg: x.name + ' removed.' })) };
+    });
+    const typeLabel = f.type === 'roofing' ? 'Roofing' : f.type === 'remodeling' ? 'Remodeling' : '—';
+    const extra = (f.type === 'roofing' ? f.roofIssues.concat(f.roofAge ? ['Roof age: ' + f.roofAge] : []) : f.areas).join(', ') || '—';
+    const row = (k, v) => ({ k, v: v || '—' });
+    const reviewGroups = [
+      { title: 'Project', step: 0, rows: [row('Type', typeLabel), row(f.type === 'roofing' ? 'Prompted by' : 'Areas', extra)] },
+      { title: 'Property & timing', step: 1, rows: [row('Property', f.property), row('Location', f.location), row('Timeline', f.timeline), row('Budget', f.budget)] },
+      { title: 'Details & photos', step: 2, rows: [row('Description', f.desc), row('Photos', readyCount ? readyCount + ' attached' : 'None')] },
+      { title: 'Your details', step: 3, rows: [row('Name', f.name), row('Phone', f.phone), row('Email', f.email)] }
+    ].map(g => ({ ...g, edit: () => this.goStep(g.step), editLabel: 'Edit ' + g.title.toLowerCase() }));
+
+    const hvK = s.hover;
+    const procActive = mid ? s.proc : 99;
+
+    return {
+      flags, L, nav, progressRef: this.progressRef, mainRef: this.mainRef, menuBtnRef: this.menuBtnRef, menuRef: this.menuRef, menuCloseRef: this.menuCloseRef,
+      isHome: page === 'home', isRoofing: page === 'roofing', isRemodeling: page === 'remodeling', isProjects: page === 'projects', isAbout: page === 'about', isEstimate: page === 'estimate',
+      isDesktop: d, isMobile: !d, showHeaderCta: w >= 520,
+      headerBg: onDark ? 'rgba(34,45,55,.35)' : 'rgba(255,255,255,.86)', headerBorder: onDark ? 'rgba(255,255,255,.16)' : 'rgba(52,65,77,.1)',
+      headerShadow: s.scrolled && !onDark ? '0 10px 30px rgba(34,45,55,.08)' : 'none', headerInk: onDark ? '#FFFFFF' : '#222D37',
+      navTrack: onDark ? 'rgba(255,255,255,.08)' : 'rgba(34,45,55,.05)', menuBtnBg: onDark ? 'rgba(255,255,255,.12)' : 'rgba(34,45,55,.06)',
+      menuOpen: s.menu && !d, menuExpanded: s.menu ? 'true' : 'false',
+      openMenu: () => this.setState({ menu: true }), closeMenuBtn: () => this.closeMenu(), menuKey: e => this.trap(e, this.menuRef.current),
+      showStickyCta: w < 640 && page !== 'estimate' && !s.menu && !s.lb,
+      skipToMain: () => this.mainRef.current && this.mainRef.current.focus(),
+
+      heroRoofOp: s.heroMode === 'roofing' ? 1 : 0, heroRemOp: s.heroMode === 'remodeling' ? 1 : 0,
+      heroRoofPe: s.heroMode === 'roofing' ? 'auto' : 'none', heroRemPe: s.heroMode === 'remodeling' ? 'auto' : 'none',
+      heroThumb: s.heroMode === 'roofing' ? 'translateX(0)' : 'translateX(100%)',
+      heroOpts: [['roofing', 'Roofing'], ['remodeling', 'Remodeling']].map(([v, label]) => ({ label, checked: s.heroMode === v ? 'true' : 'false', tab: s.heroMode === v ? 0 : -1, select: () => this.setState({ heroMode: v }) })),
+      heroKey: e => { if (['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(e.key)) { e.preventDefault(); const nm = s.heroMode === 'roofing' ? 'remodeling' : 'roofing'; this.setState({ heroMode: nm }, () => { const b = e.currentTarget && e.currentTarget.parentNode && e.currentTarget.parentNode.querySelector('[aria-checked="true"]'); b && b.focus(); }); } },
+      heroLine: s.heroMode === 'roofing' ? 'Start with what you are seeing on your roof, and plan the right next step from there.' : 'Tell us which space is not working and what you would like it to become.',
+      heroHref: s.heroMode === 'roofing' ? '#/roofing' : '#/remodeling', heroCta: s.heroMode === 'roofing' ? 'Explore roofing' : 'Explore remodeling',
+      marquee: [0, 1].flatMap(() => ['Roofing', 'Remodeling', 'Houston, TX', 'Request an estimate']).map((t, i) => ({ t, fill: i % 2 ? 'transparent' : '#222D37', stroke: i % 2 ? '1.5px #222D37' : '0' })),
+      hv: { roofIn: () => this.setState({ hover: 'tile-roof' }), remIn: () => this.setState({ hover: 'tile-rem' }), out: () => this.setState({ hover: null }),
+        roof: hvK === 'tile-roof' ? 'scale(1.06)' : 'none', rem: hvK === 'tile-rem' ? 'scale(1.06)' : 'none',
+        roofArrow: hvK === 'tile-roof' ? 'rotate(45deg)' : 'none', remArrow: hvK === 'tile-rem' ? 'rotate(45deg)' : 'none' },
+      roofNames: ROOF_SVC.map(x => x.name), remNames: REM_SVC.map(x => x.name),
+      hasFeatured: railItems.length > 0, noFeatured: railItems.length === 0, railItems, railRef: this.railRef, chipRef: this.chipRef,
+      railPrev: () => this.railRef.current && this.railRef.current.scrollBy({ left: -this.railRef.current.clientWidth * 0.7, behavior: this.rm ? 'auto' : 'smooth' }),
+      railNext: () => this.railRef.current && this.railRef.current.scrollBy({ left: this.railRef.current.clientWidth * 0.7, behavior: this.rm ? 'auto' : 'smooth' }),
+      railDown: e => { if (e.pointerType !== 'mouse') return; this.drag = { x: e.clientX, left: this.railRef.current.scrollLeft }; this.dragged = false; },
+      railMove: e => {
+        const c = this.chipRef.current; if (c && e.pointerType === 'mouse') c.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px) scale(1)';
+        if (!this.drag) return; const dx = e.clientX - this.drag.x; if (Math.abs(dx) > 5) { this.dragged = true; this.railRef.current.style.scrollSnapType = 'none'; }
+        this.railRef.current.scrollLeft = this.drag.left - dx;
+      },
+      railUp: () => { this.drag = null; if (this.railRef.current) this.railRef.current.style.scrollSnapType = 'x mandatory'; setTimeout(() => { this.dragged = false; }, 50); },
+      railEnter: e => { const c = this.chipRef.current; if (c && e.pointerType === 'mouse') { c.style.opacity = '1'; c.textContent = 'Drag'; } },
+      railLeave: () => { this.drag = null; const c = this.chipRef.current; if (c) { c.style.opacity = '0'; } if (this.railRef.current) this.railRef.current.style.scrollSnapType = 'x mandatory'; },
+      procFill: ((Math.min(procActive, 3) + 1) / 4 * 100) + '%',
+      procSteps: STEPS.map((st, i) => { const a = i <= procActive; return { ...st, i, fill: a ? '#C87943' : 'transparent', ink: a ? '#222D37' : '#68737D', body: a ? '#4A5560' : '#68737D' }; }),
+      procStepsPlain: STEPS,
+
+      roofPanels: ROOF_SVC.map((x, i) => { const a = s.svc === i; return { ...x, num: '0' + (i + 1), isActive: a, notActive: !a, showLabel: 'Show ' + x.name,
+        cta: 'Request an estimate for ' + x.name.toLowerCase(), activate: () => { if (s.svc !== i) this.setState({ svc: i }); },
+        flex: mid ? (a ? '4 1 0%' : '1 1 0%') : 'none', h: mid ? '100%' : (a ? '440px' : '84px'),
+        shade: a ? 'linear-gradient(180deg,rgba(34,45,55,.05) 30%,rgba(34,45,55,.92) 100%)' : 'rgba(34,45,55,.66)' }; }),
+      toRoofProjects: () => this.scrollToId('roof-projects'), toRemProjects: () => this.scrollToId('rem-projects'),
+      roofProjects, hasRoofProjects: roofProjects.length > 0, noRoofProjects: roofProjects.length === 0,
+      remProjects, hasRemProjects: remProjects.length > 0, noRemProjects: remProjects.length === 0,
+      remTabs: REM_SVC.map((x, i) => { const a = s.remTab === i; return { ...x, num: '0' + (i + 1), tabId: 'rt-' + i, selected: a ? 'true' : 'false', tab: a ? 0 : -1,
+        select: () => { if (s.remTab !== i) this.setState({ remTab: i }); }, ink: a ? '#222D37' : '#68737D', numInk: a ? '#A95F2D' : '#68737D',
+        arrowOp: a ? 1 : 0, arrowX: a ? 'none' : 'translateX(-8px)', imgOp: a ? 1 : 0, imgScale: a ? 'none' : 'scale(1.06)', pe: a ? 'auto' : 'none' }; }),
+      remActive: { ...REM_SVC[s.remTab], tabId: 'rt-' + s.remTab },
+      remTabKey: e => {
+        const k = e.key; let n = s.remTab;
+        if (k === 'ArrowDown' || k === 'ArrowRight') n = (n + 1) % 4; else if (k === 'ArrowUp' || k === 'ArrowLeft') n = (n + 3) % 4; else if (k === 'Home') n = 0; else if (k === 'End') n = 3; else return;
+        e.preventDefault(); this.setState({ remTab: n }, () => { const b = document.getElementById('rt-' + n); b && b.focus(); });
+      },
+      roofFaqs: this.faqList(FAQ.roof), remFaqs: this.faqList(FAQ.rem), genFaqs: this.faqList(FAQ.gen),
+
+      filters, gallery, galleryRef: this.galleryRef, hasGallery: gallery.length > 0, galleryEmpty: gallery.length === 0,
+      emptyTitle: s.filter === 'All' ? 'No projects published yet' : 'No ' + s.filter.toLowerCase() + ' projects published yet',
+      showAllBtn: s.filter !== 'All' && pub.length > 0, showAll: () => this.setState({ filter: 'All' }),
+      filterAnnounce: 'Showing ' + gallery.length + ' ' + (s.filter === 'All' ? '' : s.filter.toLowerCase() + ' ') + 'projects',
+
+      statementRef: this.statementRef, statementWords: STATEMENT.split(' '), statementOp: this.rm ? 1 : 0.18,
+      facts: [
+        { k: 'Business', v: 'Doyle Roofing & Remodeling', icon: 'ph-duotone ph-house-line' },
+        { k: 'Principal', v: 'Paxton Doyle', icon: 'ph-duotone ph-user' },
+        { k: 'Services', v: 'Roofing · Remodeling', icon: 'ph-duotone ph-hammer' },
+        { k: 'Address', v: '1100 Congress St, Houston, TX 77002', icon: 'ph-duotone ph-map-pin' },
+        { k: 'Phone', v: '+1 (410) 776-6528', href: 'tel:+14107766528', icon: 'ph-duotone ph-phone' },
+        { k: 'Email', v: 'paxton.doyle@yahoo.com', href: 'mailto:paxton.doyle@yahoo.com', icon: 'ph-duotone ph-envelope-simple' }
+      ].map((x, i) => ({ ...x, href: x.href || '', plain: !x.href, bg: i === 0 ? '#222D37' : i === 3 ? '#F5E9DF' : '#FFFFFF', ink: i === 0 ? '#FFFFFF' : '#222D37' })),
+
+      lbOpen: !!lb, lb: lb || { slot: 'proj-none', cat: '', title: '', desc: '' }, lbRef: this.lbRef, lbCloseRef: this.lbCloseRef,
+      lbCount: lb ? String(s.lb.i + 1).padStart(2, '0') + ' / ' + String(lbList.length).padStart(2, '0') : '', lbMany: lbList.length > 1,
+      lbCtaHref: lb ? '#/estimate?type=' + lb.cat.toLowerCase() : '#/estimate',
+      lbClose: () => this.closeLb(), lbPrev: () => this.stepLb(-1), lbNext: () => this.stepLb(1), lbBackdrop: () => this.closeLb(), stop: e => e.stopPropagation(),
+      lbKey: e => { if (e.key === 'ArrowRight') this.stepLb(1); else if (e.key === 'ArrowLeft') this.stepLb(-1); else this.trap(e, this.lbRef.current); },
+
+      f, err, inv, bc, on, bl, formTopRef: this.formTopRef, stepBodyRef: this.stepBodyRef, stepHeadRef: this.stepHeadRef,
+      summaryRef: this.summaryRef, errorRef: this.errorRef, successRef: this.successRef,
+      showStepper: !done, showForm: !done, isSuccess: done, isError: s.status === 'error' && s.step === 4,
+      wProgress: ((s.step + 1) / W_STEPS.length * 100) + '%',
+      wSteps: W_STEPS.map((ws, i) => { const cur = i === s.step, dn = i < s.step || (i <= s.maxStep && i !== s.step && stepValid(i) && i < 4);
+        return { label: ws.label, n: i + 1, current: cur ? 'step' : undefined, done: dn && !cur, notDone: !(dn && !cur), locked: i > s.maxStep || busy,
+          sr: cur ? ' (current step)' : dn ? ' (completed)' : '', go: () => { if (i !== s.step) this.goStep(i); },
+          bg: cur ? '#FFFFFF' : 'transparent', ink: cur ? '#222D37' : (i <= s.maxStep ? '#FFFFFF' : '#8E99A3'),
+          dotBg: cur ? '#A95F2D' : dn ? '#C87943' : 'rgba(255,255,255,.1)', dotInk: cur || dn ? '#FFFFFF' : '#B9C2CA', dotSize: dn && !cur ? '18px' : '13px' }; }),
+      stepCounter: 'Step ' + (s.step + 1) + ' of ' + W_STEPS.length, stepTitle: W_STEPS[s.step].title, stepIntro: W_STEPS[s.step].intro,
+      isStep0: s.step === 0, isStep1: s.step === 1, isStep2: s.step === 2, isStep3: s.step === 3, isStep4: s.step === 4,
+      showSummary: !!s.tried[s.step] && summaryItems.length > 0 && s.step < 4,
+      summaryTitle: summaryItems.length === 1 ? 'There is 1 thing to fix before continuing' : 'There are ' + summaryItems.length + ' things to fix before continuing', summaryItems,
+      typeOpts: [
+        { value: 'roofing', label: 'Roofing', hint: 'Leaks, damage, an ageing roof or a replacement', icon: 'ph-duotone ph-house-simple' },
+        { value: 'remodeling', label: 'Remodeling', hint: 'Kitchens, bathrooms, interiors or exteriors', icon: 'ph-duotone ph-paint-roller' }
+      ].map(o => { const c = f.type === o.value; return { ...o, id: 'f-type-' + o.value, checked: c, bg: c ? '#222D37' : '#F7F7F5', ink: c ? '#FFFFFF' : '#222D37', iconInk: c ? '#E9B48C' : '#A95F2D', border: c ? '#222D37' : (err.type ? '#9E2F1E' : 'transparent'), onChange: () => this.setF('type', o.value) }; }),
+      isRoofType: f.type === 'roofing', isRemodelType: f.type === 'remodeling', showSwitchNote: !!f.type,
+      roofIssueOpts: chip('roofIssues', ROOF_ISSUES), areaOpts: chip('areas', AREAS),
+      propOpts: PROPS.map(([label, icon], i) => { const c = f.property === label; return { label, icon, id: 'f-prop-' + i, checked: c, bg: c ? '#F5E9DF' : '#F7F7F5', border: c ? '#A95F2D' : (err.property ? '#9E2F1E' : 'transparent'), onChange: () => this.setF('property', label) }; }),
+      timeOpts: TIMELINES.map((t, i) => pill('timeline', t, 'f-time-' + i)), budgetOpts: BUDGETS.map((b, i) => pill('budget', b, 'f-budget-' + i)),
+      descHelp: f.type === 'roofing' ? 'What have you noticed, where and since when? Mention any leaks, recent storms or previous repairs.' : f.type === 'remodeling' ? 'Which space, what is not working today and what would you like it to become?' : 'Describe the work, any known issues, the outcome you want and anything else that would help.',
+      descCount: f.desc.length + ' / 2000',
+      hasFiles: s.files.length > 0, fileItems,
+      filesStatus: s.filesMsg || (readyCount ? readyCount + ' of 5 photos attached.' : 'No photos attached.'),
+      dropBorder: s.drag ? '#A95F2D' : 'rgba(52,65,77,.3)', dropBg: s.drag ? '#F5E9DF' : '#F7F7F5',
+      pickFiles: e => { this.addFiles(e.target.files); e.target.value = ''; },
+      dragOver: e => { e.preventDefault(); if (!s.drag) this.setState({ drag: true }); },
+      dragLeave: () => this.setState({ drag: false }),
+      drop: e => { e.preventDefault(); this.setState({ drag: false }); this.addFiles(e.dataTransfer && e.dataTransfer.files); },
+      reviewGroups, uploadWait: s.uploadWait && s.files.some(x => x.status === 'uploading'),
+      canBack: s.step > 0, noBack: s.step === 0, back: () => this.goStep(s.step - 1),
+      formSubmit: e => { e.preventDefault(); if (s.step < 4) this.next(); else this.submit(); },
+      busy: busy ? 'true' : 'false', busyBool: busy,
+      nextLabel: s.step < 3 ? 'Continue' : s.step === 3 ? 'Review request' : busy ? 'Sending…' : s.status === 'error' ? 'Retry sending' : 'Send request',
+      nextIcon: s.step < 4 ? 'ph-duotone ph-arrow-right' : busy ? 'ph-duotone ph-circle-notch' : s.status === 'error' ? 'ph-duotone ph-arrow-clockwise' : 'ph-duotone ph-paper-plane-tilt',
+      spinAnim: busy ? 'dr-spinfast 1s linear infinite' : 'none',
+      firstName: (f.name.trim().split(/\s+/)[0]) || 'there', refCode: s.ref, resetForm: this.resetForm,
+      summaryRows: [['Project type', typeLabel], ['Property', f.property], ['Location', f.location], ['Timeline', f.timeline], ['Budget', f.budget], ['Photos', readyCount ? readyCount + ' attached' : 'None'], ['Name', f.name], ['Email', f.email]].map(([k, v]) => ({ k, v: v || '—' }))
+    };
+  }
+}
+</script>
+</body>
+</html>
